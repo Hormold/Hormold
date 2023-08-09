@@ -42,7 +42,7 @@ export default function Projects () {
 			{projectsData.map((item, index) => (
                 <div className="mb-5 item-section" key={index}>
 					<a href={item.website} target="_blank" rel="noreferrer" className="company-logo">
-						<Image src={`/${item.imageName}`} alt={item.title} width={50} height={50} className="p-1" />
+						<Image src={`/${item.imageName}`} alt={item.title} width={50} height={50} className="p-1 rounded-lg" />
 					</a>
 
                     <div className="w-full space-y-5">

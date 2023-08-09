@@ -11,7 +11,7 @@ export default function About () {
 				<ul className='fa-ul'>
 					<li>
 						<span className="fa-li">
-							<FontAwesomeIcon icon={faUser} className="mr-2" />
+							<FontAwesomeIcon icon={faUser} className="mr-2" size='sm' fixedWidth={true} />
 						</span>
 						As a Senior Software Engineer with 10+ years experience and authorized to work in the USA, I bring expertise in both backend and frontend software development within the gambling industry. My backend skills include TypeScript (Node.js) development, contributing to half a million dollars annual revenue growth.
 					</li>

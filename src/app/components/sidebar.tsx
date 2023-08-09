@@ -34,12 +34,12 @@ export default function Sidebar() {
 					<a href="/"><Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" /></a>
 					<div className="text-lg font-semibold mb-1.5">Nikita Podelenko</div>
 					<div className="text-sm text-gray-400 mb-7">Senior Fullstack Developer</div>
-					<div className="flex group">
+					<a href='/cv.pdf' target='_blank' className="flex group">
 						<button className="download-btn">Download CV</button>
 						<button className="download-btn-icon" title="Download CV">
 							<FontAwesomeIcon icon={faDownload} />
 						</button>
-					</div>
+					</a>
 				</div>
 			</div>
 
@@ -66,11 +66,11 @@ export default function Sidebar() {
 				</div>
 			</div>
 
-			<div className="p-7 block-section flow-root">
+			<div className="p-7 block-section flow-root my-2">
 				<h2 className="block-title">Top Skills</h2>
-				<div className="-m-2 flex flex-wrap">
+				<div className="-m-2 flex flex-wrap transition-all duration-300">
 					{(isShowAllSkills?allSkills:topSkills).map((skill, index) => (
-						<span className="skill-tag" key={index}>{skill}</span>
+						<span className="skill-tag transition" key={index}>{skill}</span>
 					))}
 					{isShowAllSkills?'':<span className="skill-tag cursor-pointer" title="Show more" onClick={() => setIsShowAllSkills(!isShowAllSkills)}>+{allSkills.length - topSkills.length}</span>}
 				</div>

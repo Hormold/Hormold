@@ -99,7 +99,7 @@ export default function Experience () {
                 <div className="mb-5 item-section" key={index}>
                     {item.companyLink ? (
                         <a href={item.companyLink} target="_blank" rel="noreferrer" className="company-logo" style={{backgroundColor: item.backgroundColor}}>
-                            <div className="company-logo" style={{backgroundColor: item.backgroundColor}}>
+                            <div className="company-logo">
                                 <Image src={`/${item.imageName}`} alt={item.company} width={50} height={50} className="p-1" />
                             </div>
                         </a>

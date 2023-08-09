@@ -369,3 +369,14 @@
     padding: 1.25rem;
   }
 }
+
+@keyframes fadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+
+
+.skill-tag {
+  animation: fadeIn 1s ease-in;
+}
+
