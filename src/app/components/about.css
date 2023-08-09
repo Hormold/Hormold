@@ -1,0 +1,39 @@
+.digits {
+    animation-duration: 2.5s;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+	animation-name: luckie;
+	animation-iteration-count: infinite;
+	animation-direction: alternate-reverse;
+}
+
+#counter {
+    height: 1em;
+	overflow: hidden;
+	display: inline-block;
+}
+
+#counter2 {
+    height: 1em;
+	overflow: hidden;
+	display: inline-block;
+}
+
+
+.digits {
+    float:left;
+    list-style-type: none;
+    line-height: 1em;
+	font-weight: bold;
+}
+
+.digits-first {
+    margin-top: 0em; /* number 4! */
+}
+
+@keyframes luckie {
+    100% {
+        margin-top: -2.2em;
+    }
+}
