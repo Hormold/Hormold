@@ -4,8 +4,20 @@ import About from './components/about'
 import Experience from './components/experience'
 import Education from './components/education'
 import Projects from './components/projects'
+import { useEffect } from 'react'
 
 export default function Home() {
+
+  useEffect(() => {
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+
+    if (prefersDark) {
+        document.documentElement.classList.add('dark')
+    }
+  }, []);
+
   return (
     <main className="main-container">
       <div className="grid gap-4 lg:grid-cols-4">
