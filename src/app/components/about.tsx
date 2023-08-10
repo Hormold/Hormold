@@ -5,9 +5,9 @@ import './about.css'
 
 export default function About () {
 	return (
-		<div className="p-7 pb-0 block-section">
-			<h2 className="block-title">About me</h2>
-			<div className="text-gray-600 mb-5">
+		<div className="p-7 pb-0 block-section dark:bg-slate-600 bg-white">
+			<h2 className="block-title dark:text-white">About me</h2>
+			<div className="text-gray-600 mb-5 dark:text-white">
 				<ul className='fa-ul'>
 					<li>
 						<span className="fa-li">
@@ -40,7 +40,7 @@ export default function About () {
 
 			<div className="border-t border-gray-200 my-5"></div>
 			
-			<ul className="flex space-x-8 font-medium">
+			<ul className="flex space-x-8 font-medium dark:text-white">
 				<li>
 					<a href="/cv.pdf" className="menu-link-active menu-link-hover">Resume</a>
 				</li>

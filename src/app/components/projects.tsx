@@ -37,8 +37,8 @@ const projectsData = [
 
 export default function Projects () {
 	return (
-		<div className="p-7 block-section">
-            <h2 className="block-title">Side Projects</h2>
+		<div className="p-7 block-section dark:bg-slate-600 bg-white">
+            <h2 className="block-title dark:text-white">Side Projects</h2>
 			{projectsData.map((item, index) => (
                 <div className="mb-5 item-section" key={index}>
 					<a href={item.website} target="_blank" rel="noreferrer" className="company-logo">
@@ -48,7 +48,7 @@ export default function Projects () {
                     <div className="w-full space-y-5">
                         <div className="item-header">
                             <div className="space-y-1.5">
-                                <div className="font-medium">{item.title}</div>
+                                <div className="font-medium dark:text-white">{item.title}</div>
                                 <div className="flex space-x-5">
                                     <div className="item-header-info">
                                         <FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4" />
@@ -70,10 +70,10 @@ export default function Projects () {
 								</div>
                             </div>
                         </div>
-                        <p className="text-gray-600">
+                        <p className="text-gray-600 dark:text-white">
                             {item.description}
                         </p>
-                        <ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400">
+                        <ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400 dark:text-white">
                             {item.keyPoints.map((keyPoint, index) => (
                                 <li key={index}>{keyPoint}</li>
                             ))}

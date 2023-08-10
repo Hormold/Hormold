@@ -14,8 +14,8 @@ const EducationItems = [
 
 export default function Education () {
 	return (
-		<div className="p-7 block-section">
-			<h2 className="block-title">Education</h2>
+		<div className="p-7 block-section dark:bg-slate-600 bg-white">
+			<h2 className="block-title dark:text-white">Education</h2>
 			{EducationItems.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					<div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cover" style={{backgroundImage: `url(${item.imageName})`}}>
@@ -24,7 +24,7 @@ export default function Education () {
 					<div className="w-full space-y-5">
 						<div className="item-header items-end">
 							<div className="space-y-1.5">
-								<div className="font-medium">{item.degree}</div>
+								<div className="font-medium dark:text-white">{item.degree}</div>
 								<div className="flex space-x-5">
 									<div className="item-header-info">
 										<FontAwesomeIcon icon={faSchool} className="h-4 w-4" />

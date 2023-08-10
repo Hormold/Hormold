@@ -1,6 +1,5 @@
 import './globals.css'
 import 'node_modules/@fortawesome/fontawesome-svg-core/styles.css'
-
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -19,8 +18,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className="bg-gray-100 antialiased">{children}</body>
+    <html lang="en" className="">
+      <body className="bg-gray-100 antialiased dark:bg-slate-800">
+        {children}
+      </body>
     </html>
   )
 }

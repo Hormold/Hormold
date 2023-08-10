@@ -93,8 +93,8 @@ const ExperienceData = [
 
 export default function Experience () {
 	return (
-		<div className="p-7 block-section">
-            <h2 className="block-title">Experience</h2>
+		<div className="p-7 block-section dark:bg-slate-600 bg-white">
+            <h2 className="block-title dark:text-white">Experience</h2>
             {ExperienceData.map((item, index) => (
                 <div className="mb-5 item-section" key={index}>
                     {item.companyLink ? (
@@ -112,7 +112,7 @@ export default function Experience () {
                     <div className="w-full space-y-5">
                         <div className="item-header">
                             <div className="space-y-1.5">
-                                <div className="font-medium">{item.position}</div>
+                                <div className="font-medium dark:text-white">{item.position}</div>
                                 <div className="flex space-x-5">
                                     <div className="item-header-info">
                                         <FontAwesomeIcon icon={faSuitcase} className="h-4 w-4" />
@@ -134,16 +134,18 @@ export default function Experience () {
                                 </div>
                             </div>
                         </div>
-                        <p className="text-gray-600">
+                        <p className="text-gray-600 dark:text-white">
                             {item.description}
                         </p>
-                        <ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400">
+                        <ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400 dark:text-white">
                             {item.keyPoints.map((keyPoint, index) => (
                                 <li key={index}>{keyPoint}</li>
                             ))}
                         </ul>
                         <p>
-                            <span className="font-medium">Skills:</span> {item.skills.join(', ')}
+                            {item.skills.map((skill, index) => (
+                                <span key={index} className="inline-block leading-3 p-1 ml-2 text-sm font-medium text-white bg-purple-500 rounded-md">{skill}</span>
+                            ))}
                         </p>
                         <div className="border-b border-gray-200"></div>
                     </div>
