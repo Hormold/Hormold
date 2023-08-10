@@ -19,6 +19,7 @@ export default function RootLayout({
     <html lang="en" className="">
       <body className="bg-gray-100 antialiased dark:bg-slate-800">
         {children}
+        <div className="hidden dark:block bottom-shadow z-50 sticky bottom-0 left-0 w-full h-16 bg-gradient-to-t from-gray-900 dark:from-gray-800"></div>
       </body>
     </html>
   )
