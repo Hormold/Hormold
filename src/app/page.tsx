@@ -15,6 +15,8 @@ export default function Home() {
 
     if (prefersDark) {
         document.documentElement.classList.add('dark')
+        // set cookie to dark
+        document.cookie = "theme=dark;path=/"
     }
   }, []);
 

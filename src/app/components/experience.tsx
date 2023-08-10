@@ -56,7 +56,7 @@ const ExperienceData = [
             `Developed an affiliate network platform, using the same technical stack - more 100+ partners joined in first few months`,
             `The project was made on a turnkey basis and handed over to the company for further experiments and launch as a separate product.`
         ],
-        descrption: `Hired as a solo architect/developer for an MVP iGambling project.`,
+        description: `Hired as a solo developer / architect for building an MVP of iGambling project.`,
         imageName: 'company/igambling.png?1',
         backgroundColor: '#173267',
     },
@@ -76,7 +76,7 @@ const ExperienceData = [
     {
         position: 'Web Developer',
         type: 'Part time',
-        company: 'VideSeed / Twite',
+        company: 'VideoSeed / AdPro / Twite',
         companyLink: `https://adv.videoseed.ru/`,
         location: 'Saint Petersburg, Russia',
         startedAt: 'December 2012',
@@ -84,7 +84,8 @@ const ExperienceData = [
         skills: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap', 'Git'],
         description: 'LAMP Stack',
         keyPoints: [
-            `Service offered to users to earn money on personal accounts in social networks. My objective was creating admin panel with statistics, caching. This is my first experience on working with big datasets.`
+            `As part of the VideoSeed / AdPro team, I worked as a backend developer, focusing on the development and maintenance of administrative panels. My job responsibilities also included introducing backend features to enhance the functionality and performance of our video promotion platform. This is my first experience on working with big datasets.`,
+            `As a web developer at Twite, a thriving advertising exchange for microblogs, I played a pivotal role in upgrading and maintaining the website to facilitate optimal performance and user experience. I achieved notable improvements in the system efficiency by streamlining database calls which significantly fast-tracked the operation speed. Additionally, working alongside the development team, I contributed to the expansion of our service suite by incorporating several new features, including the ability to purchase "likes" on Facebook posts and a robust blogger and advertiser referral program.`
         ],
         imageName: 'company/videoseed.jpg',
 
