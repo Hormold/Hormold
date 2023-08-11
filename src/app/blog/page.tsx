@@ -1,7 +1,7 @@
 "use client"
 import './blog.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSchool, faMapMarked, faCalendar } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faTags } from '@fortawesome/free-solid-svg-icons'
 import Posts from '../posts/index'
 
 export default function Blog() {
@@ -18,18 +18,24 @@ export default function Blog() {
 			</div>
 			{Posts.map((article, index) => (
 				<div className='p-7 block-section bg-white dark:bg-slate-600' key={index}>
-					<h1 className='block-title dark:text-white'>{article.title}</h1>
-					<div className="item-header items-end">
+					<h1 className='dark:text-white text-2xl'>{article.title}</h1>
+					<div className="item-header items-end mt-2">
 						<div className="space-y-1.5">
 							<div className="flex space-x-2">
-								<div className="item-header-info">
+								<div className="item-header-info" id="date">
 									<FontAwesomeIcon icon={faCalendar} className="h-4 w-4" />
 									<span>{article.date}</span>
+								</div>
+								<div className="item-header-info" id="tags">
+									<FontAwesomeIcon icon={faTags} className="h-4 w-4" />
+									{article.tags.map((tag, index) => (
+										<span key={index}>{tag}</span>
+									))}
 								</div>
 							</div>
 						</div>
 					</div>
-					<p className='dark:text-white'>{article.Post()}</p>
+					<div className='dark:text-white mt-2'>{article.Post}</div>
 				</div>
 			))}
 		</>
