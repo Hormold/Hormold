@@ -65,7 +65,7 @@ export default function FunMode () {
 		{context.funMode?
 			<div className="hidden-el opacity-0 fixed z-0 left-2/4 top-1/4">
 				<Image src='/dog.png' width={130} height={400} alt='Dog' className='rounded-full dog-image' />
-				<h5 className='text-center text-white text-lg hidden-text m-5'>
+				<h5 className='text-center text-black dark:text-white text-lg hidden-text m-5'>
 					Thanks for<br />visiting my website!
 				</h5>
 			</div>
