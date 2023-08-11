@@ -5,9 +5,9 @@ import Projects from './components/projects'
 import Reviews from './components/reviews'
 
 
-export default function Blog() {
+export default function Main() {
 	return (
-		<div>
+		<div className='space-y-5'>
             <Experience />
             <Projects />
             <Education />
