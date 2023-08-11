@@ -1,9 +1,14 @@
 'use client'
 import { faMapMarked, faServer, faUser } from '@fortawesome/free-solid-svg-icons'
+import {usePathname} from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Link from 'next/link'
 import './about.css'
 
 export default function About () {
+
+	const currentRoute = usePathname()
+
 	return (
 		<div className="p-7 pb-0 block-section dark:bg-slate-600 bg-white">
 			<h2 className="block-title dark:text-white">About me</h2>
@@ -42,10 +47,10 @@ export default function About () {
 			
 			<ul className="flex space-x-8 font-medium dark:text-white">
 				<li>
-					<a href="/cv.pdf" className="menu-link-active menu-link-hover">Resume</a>
+					<Link href="/" className={(currentRoute === '/'?'menu-link-active':'menu-link')+" menu-link-hover"}>Resume</Link>
 				</li>
 				<li>
-					<a href="https://hormold.ru" className="menu-link menu-link-hover" target="_blank">Blog</a>
+					<Link href="/blog" className={(currentRoute === '/blog'?'menu-link-active':'menu-link')+" menu-link-hover"}>Blog</Link>
 				</li>
 			</ul>
 		</div>
