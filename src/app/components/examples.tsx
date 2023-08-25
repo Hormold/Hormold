@@ -31,7 +31,7 @@ const FunProjects = [
 		url: "https://github.com/Hormold/shitchat"
 	},
 	{
-		title: "GPT-3 SQL Box: Built a SQL query generator that uses GPT-3 to generate SQL queries from natural language and schema knowledge.",
+		title: "Python Text 2 SQL Generator: Built a SQL query generator that uses GPT-3 to generate SQL queries from natural language and schema knowledge.",
 		url: "https://github.com/Hormold/gpt-sql-box"
 	},
 	{
