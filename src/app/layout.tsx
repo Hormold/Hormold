@@ -86,6 +86,7 @@ export default function RootLayout({
           <meta property="og:image:height" content="600" />
           <meta property="og:locale" content="en_US" />
           <meta property="og:site_name" content="Nikita Podelenko - CV of TS/JS Full Stack Developer" />
+          <script async src="https://analytics.umami.is/script.js" data-website-id="963cb8bf-15dd-4bda-ab10-cdcdee49e196"></script>
 
 
         </head>
