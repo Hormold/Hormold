@@ -2,7 +2,7 @@
 <h3 align="center">A passionate fullstack developer from United States</h3>
 
 
-- 👨‍💻 All of my projects and CV are available at: [https://cv.hormold.ru/](https://cv.hormold.ru/)
+- 👨‍💻 All of my projects and CV are available at: [https://podelenko.pro/](https://podelenko.pro/)
 
 - 📫 How to reach me: **hormold@gmail.com**
 
