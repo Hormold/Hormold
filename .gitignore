@@ -33,3 +33,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+resume/resume.aux
+resume/resume.log
+resume/resume.out
+resume/resume.synctex.gz
+resume/resume.fdb_latexmk
+resume/resume.fls

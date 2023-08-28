@@ -2,13 +2,9 @@ import { createContext } from "react";
 
 const AppContext = createContext({
 	funMode: false,
-	setFunMode: (newMode: boolean) => {
-		console.log("setFunMode not implemented");
-	},
+	setFunMode: (newMode: boolean) => {return},
 	darkMode: true,
-	setDarkMode: (darkMode: boolean) => {
-		console.log("setDarkMode not implemented");
-	}
+	setDarkMode: (darkMode: boolean) => {return},
 });
 
 export default AppContext;

@@ -39,55 +39,55 @@ const projectsData = [
 export default function Projects () {
 	return (
 		<div className="p-7 block-section dark:bg-slate-600 bg-white">
-            <h2 className="block-title dark:text-white">Side Projects</h2>
+			<h2 className="block-title dark:text-white">Side Projects</h2>
 			{projectsData.map((item, index) => (
-                <div className="mb-5 item-section" key={index}>
+				<div className="mb-5 item-section" key={index}>
 					<a href={item.website} target="_blank" rel="noreferrer" className="company-logo">
 						<Image src={`/${item.imageName}`} alt={item.title} width={50} height={50} className="p-1 rounded-lg" />
 					</a>
 
-                    <div className="w-full space-y-5">
-                        <div className="item-header">
-                            <div className="space-y-1.5">
-                                <div className="font-medium dark:text-white">{item.title}</div>
-                                <div className="flex space-x-5">
-                                    <div className="item-header-info">
-                                        <FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4" />
-                                        <span>
-                                            {item.stack.map((stackItem, index) => (
+					<div className="w-full space-y-5">
+						<div className="item-header">
+							<div className="space-y-1.5">
+								<div className="font-medium dark:text-white">{item.title}</div>
+								<div className="flex space-x-5">
+									<div className="item-header-info">
+										<FontAwesomeIcon icon={faLayerGroup} className="h-4 w-4" />
+										<span>
+											{item.stack.map((stackItem, index) => (
 												<span key={index}>{stackItem}{index !== item.stack.length - 1 ? ', ' : ''}</span>
 											))}
-                                        </span>
-                                    </div>
+										</span>
+									</div>
 									
-                                </div>
-                            </div>
+								</div>
+							</div>
 							
-                            <div className="space-y-2 sm:text-right">
-                                <div className="job-item-badge">{item.status}</div>
+							<div className="space-y-2 sm:text-right">
+								<div className="job-item-badge">{item.status}</div>
 								<div className="item-header-info">
 									<FontAwesomeIcon icon={faUser} className="h-4 w-4" />
 									<span>{item.role}</span>
 								</div>
-                            </div>
-                        </div>
-                        <p className="text-gray-600 dark:text-white">
-                            {item.description}
-                        </p>
-                        <ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400 dark:text-white">
-                            {item.keyPoints.map((keyPoint, index) => (
-                                <li key={index}>{keyPoint}</li>
-                            ))}
-                        </ul>
+							</div>
+						</div>
+						<p className="text-gray-600 dark:text-white">
+							{item.description}
+						</p>
+						<ul role="list" className="list-disc space-y-3 text-gray-600 marker:text-purple-400 dark:text-white">
+							{item.keyPoints.map((keyPoint, index) => (
+								<li key={index}>{keyPoint}</li>
+							))}
+						</ul>
 						<div className="flex space-x-3">
 							<a href={item.website} target="_blank" rel="noreferrer" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover:text-purple-200">
 								Visit website - {item.title}
 							</a>
 						</div>
-                        <div className="border-b border-gray-200"></div>
-                    </div>
-                </div>
-            ))}
+						<div className="border-b border-gray-200"></div>
+					</div>
+				</div>
+			))}
 		</div>
 	)
 }

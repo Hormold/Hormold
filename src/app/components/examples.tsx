@@ -95,7 +95,7 @@ export default function CodeExamples () {
 
 			<hr className='my-5' />
 
-			<h2 className="block-title dark:text-white">Fun Projects</h2>
+			<h2 className="block-title dark:text-white" id="fun">Fun Projects</h2>
 
 			<p className="text-gray-600 dark:text-white ml-2">I have got a heap of coding projects I mess with over the weekends. They are not always in shipshape, and sometimes they are just suspiciously like alphabet soup than actual code. They exist though, much like my will to live on Mondays. I am a fearless kind of guy - I am not scared to share and scare with a touch of the wild, chaotic, «hold-my-beer» kind of code.</p>
 			<ul className='list-disc fa-ul m-5 text-gray-600 dark:text-white space-y-2'>

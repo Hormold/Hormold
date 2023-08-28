@@ -5,6 +5,7 @@ import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
 import { useContext, useState } from 'react'
 import AppContext from "./context"
+import Sparkles from './sparks'
 
 const allSkills = [
 	'JavaScript',
@@ -30,16 +31,18 @@ export default function Sidebar() {
 			<div className="shadow rounded-xl overflow-hidden">
 				<div className="h-32 bg-cover" style={{"backgroundImage": "url('/cover2.jpg')"}}></div>
 				<div className="pt-14 p-7 bg-white relative dark:bg-slate-600">
-				
+					
 					<span className="status-badge bg-green-400">
-						Open to work
+						<Sparkles color="#c00ffe" >
+							Open to work
+						</Sparkles>
 					</span>
-					<a href="/"><Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" /></a>
+					<Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" />
 					<div className="text-lg font-semibold mb-1.5 dark:text-white">Nikita Podelenko</div>
 					<div className="text-sm text-gray-400 mb-7">Senior Fullstack Developer</div>
-					<a href='/cv.pdf' target='_blank' className="flex group">
-						<button className="download-btn">Download CV</button>
-						<button className="download-btn-icon" title="Download CV">
+					<a href='/resume.pdf' target='_blank' className="flex group" data-umami-event="cv">
+						<button className="download-btn">Download Resume</button>
+						<button className="download-btn-icon" title="Download Resume">
 							<FontAwesomeIcon icon={faDownload} />
 						</button>
 					</a>
@@ -85,11 +88,11 @@ export default function Sidebar() {
 					<div className="flex justify-between">
 						<div className="text-gray-400">
 							<FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-							Email
+							E-Mail
 						</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">
-							<a href="mailto:hormold@gmail.com">
-								hormold@gmail.com
+						<div className="font-medium text-right text-gray-600 dark:text-white text-sm truncate">
+							<a href="mailto:n.podelenko@gmail.com" target="_blank" data-umami-event="contact" data-umami-event-social="email">
+								n@podelenko.pro
 							</a>
 						</div>
 					</div>
@@ -99,8 +102,8 @@ export default function Sidebar() {
 							<FontAwesomeIcon icon={faTelegram} className="mr-2" />
 							Telegram
 						</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">
-							<a href="https://t.me/define" target="_blank">
+						<div className="font-medium text-right text-gray-600 dark:text-white text-sm ">
+							<a href="https://t.me/define" target="_blank" data-umami-event="contact" data-umami-event-social="telegram">
 								@define
 							</a>
 						</div>
@@ -111,8 +114,8 @@ export default function Sidebar() {
 							<FontAwesomeIcon icon={faLinkedin} className="mr-2" />
 							LinkedIn
 						</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">
-							<a href="https://linkedin.com/in/nikita39" target="_blank">
+						<div className="font-medium text-right text-gray-600 dark:text-white text-sm ">
+							<a href="https://linkedin.com/in/nikita39" target="_blank" data-umami-event="contact" data-umami-event-social="linkedin">
 								@nikita39
 							</a>
 						</div>
@@ -123,8 +126,8 @@ export default function Sidebar() {
 							<FontAwesomeIcon icon={faGithub} className="mr-2" />
 							GitHub
 						</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">
-							<a href="https://github.com/hormold" target="_blank">
+						<div className="font-medium text-right text-gray-600 dark:text-white text-sm ">
+							<a href="https://github.com/hormold" target="_blank" data-umami-event="contact" data-umami-event-social="github">
 								@hormold
 							</a>
 						</div>

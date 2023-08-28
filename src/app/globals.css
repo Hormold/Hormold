@@ -421,3 +421,52 @@
       background-position: 200% center;
   }
 }
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(180deg);
+  }
+}
+
+@keyframes comeInOut {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.childWrapper {
+  position: relative;
+  z-index: 1;
+  font-weight: bold;
+}
+
+.svgSpark {
+  z-index: 999000;
+  display: block;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: spin 1000ms linear;
+  }
+}
+
+.svgWrapper {
+  z-index: 999;
+  position: absolute;
+  display: block;
+  @media (prefers-reduced-motion: no-preference) {
+    animation: comeInOut 700ms forwards;
+  }
+}
+
+.wrapper {
+  display: inline-block;
+  position: relative;
+}

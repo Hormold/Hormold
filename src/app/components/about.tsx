@@ -1,6 +1,7 @@
 'use client'
 import { faMapMarked, faServer, faUser, faDog } from '@fortawesome/free-solid-svg-icons'
-import {usePathname} from 'next/navigation'
+import { usePrefersReducedMotion } from '@/utils/sparkle'
+import { usePathname } from 'next/navigation'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import './about.css'
@@ -8,10 +9,11 @@ import './about.css'
 export default function About () {
 
 	const currentRoute = usePathname()
+	const prefersReducedMotion = false; // Temporary, need use - usePrefersReducedMotion();
 
 	return (
 		<div className="p-7 pb-0 block-section dark:bg-slate-600 bg-white">
-			<h2 className="block-title dark:text-white">About me</h2>
+			<h2 className="block-title dark:text-white">About me {prefersReducedMotion}</h2>
 			<div className="text-gray-600 mb-5 dark:text-white">
 				<ul className='fa-ul'>
 					<li>
@@ -32,9 +34,13 @@ export default function About () {
 							<FontAwesomeIcon icon={faMapMarked} className="mr-2" />
 						</span>
 						
-						Moved to the USA in 2023, I am looking for a
-						<div id="counter" className="animated px-1">
-							<ul className="digits digits-first luckie"> <li> hybrid </li> <li> on-site </li> <li> remote </li> </ul>
+						Moved to the USA in 2023, I am looking for a 
+						<div id={!prefersReducedMotion?"counter":""} className={!prefersReducedMotion?"animated px-1":"inline font-bold m-1"}>
+							<ul className={!prefersReducedMotion?"digits digits-first luckie":"inline"}>
+								<li className={prefersReducedMotion?"inline-block before::content-[' '] after:content-['/'] after:mr-1":""}> hybrid </li>
+								<li className={prefersReducedMotion?"inline-block before::content-[' '] after:content-['/'] after:mr-1":""}> on-site </li>
+								<li className={prefersReducedMotion?"inline-block ml-1":""}> remote </li>
+							</ul>
 						</div>
 						job as a Fullstack Software Engineer.
 					</li>
@@ -42,7 +48,7 @@ export default function About () {
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faDog} className="mr-2" />
 						</span>
-							Proud father of a good Australian shepherd boy (check out Fun Mode!). I am a big fan of the hiking, camping, and fire pit on ocean beach.
+							Proud father of a good-australian-shepherd-boy (check out Fun Mode!). I am a big fan of the hiking, camping, and fire pit on ocean beach.
 							I also EV enthusiast and a big fan of Tesla.
 						</li>
 				</ul>
