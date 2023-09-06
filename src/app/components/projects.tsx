@@ -45,7 +45,7 @@ const projectsData = [
 			`Has a paid subscription model with free option`,
 			`Used Redis as a storage (Yep, I know, it is not a database, but it is fast and cheap to store small amount of data)`,
 		],
-		stack: ['TypeScript', 'Node.js', 'Google Cloud Platform', 'Telegram API', 'Google Calendar API', 'Redis', 'Whisper', 'Langchain'],
+		stack: ['TypeScript', 'Cloud Functions', 'grammY', 'Google Calendar API', 'Whisper', 'Langchain'],
 		website: 'https://t.me/voice2calbot',
 		status: 'Production',
 		imageName: 'projects/calendar.png',
