@@ -5,7 +5,7 @@ import { faLayerGroup, faUser } from '@fortawesome/free-solid-svg-icons';
 const projectsData = [
 	{
 		title: 'GPTaskBot',
-		description: 'A revolutionary chatbot powered by cutting-edge technology that can answer any question and perform any task inside Telegram',
+		description: 'A revolutionary chatbot powered by cutting-edge technology that can answer any question and perform any task inside Telegram with 60k+ users',
 		keyPoints: [
 			`Developed in TypeScript and hosted on Google Cloud Platform (GCP)`,
 			`This chatbot incorporates advanced features like voice message recognition, group chat compatibility, and image generation based on descriptions.`,
@@ -32,6 +32,23 @@ const projectsData = [
 		website: 'https://ton.cash/',
 		status: 'WIP',
 		imageName: 'projects/toncash.svg',
+		role: 'Founder, Developer'
+	},
+	{
+		title: 'Voice2Calendar',
+		description: 'Again, a Telegram bot that allows you to add events to your Google Calendar by voice',
+		keyPoints: [
+			`Developed in TypeScript and hosted on Google Cloud Functions`,
+			`This chatbot allows users to add events to their Google Calendar by voice.`,
+			`Chatbot can use Whisper to recognize voice messages in any languages`,
+			`Chatbot using langchain to extract event information from messages, use search engine to find event location and add event to Google Calendar`,
+			`Has a paid subscription model with free option`,
+			`Used Redis as a storage (Yep, I know, it is not a database, but it is fast and cheap to store small amount of data)`,
+		],
+		stack: ['TypeScript', 'Node.js', 'Google Cloud Platform', 'Telegram API', 'Google Calendar API', 'Redis', 'Whisper', 'Langchain'],
+		website: 'https://t.me/voice2calbot',
+		status: 'Production',
+		imageName: 'projects/calendar.png',
 		role: 'Founder, Developer'
 	}
 ];

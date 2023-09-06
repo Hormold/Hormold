@@ -45,6 +45,10 @@ const FunProjects = [
 	{
 		title: "DNS and Redis Protocol in Node.js: Went raw and wild to reimagine DNS and Redis protocols in Node.js.",
 		url: "https://github.com/Hormold/redns"
+	},
+	{
+		url: "https://github.com/Hormold/grammy-telegram-bot-google-cloud-functions-template",
+		title: "Telegram Bot Template: Built a template for Telegram bots that can be FAST deployed to Google Cloud Functions.",
 	}
 ]
 
