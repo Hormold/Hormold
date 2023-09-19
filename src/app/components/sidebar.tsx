@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faLink } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
 import { useContext, useState } from 'react'
 import AppContext from "./context"
@@ -145,6 +146,9 @@ export default function Sidebar() {
 					</label>
 				</div>
 
+				
+
+
 				{/*<div className='text-center m-3 dark:text-white'>
 					<label className="relative inline-flex items-center cursor-pointer" >
 						<input type="checkbox" defaultChecked={context.darkMode} className="sr-only peer" onClick={(event) => context.setDarkMode( !context.darkMode )} />
@@ -154,6 +158,16 @@ export default function Sidebar() {
 				</div>*/}
 
 				
+			</div>
+
+			<div className="mt-2 p-1 hidden md:block">
+				<a href="https://kristy.pro" target="_blank" rel="noopener noreferrer">
+					<button className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full">
+						<FontAwesomeIcon icon={faHeart} className="mr-2 text-red-500 hover:text-red-700" />
+						<span>Checkout the best product designer CV (also my wife)</span>
+						<FontAwesomeIcon icon={faHeart} className="ml-2 text-red-500 hover:text-red-700" />
+					</button>
+				</a>
 			</div>
 
 		</div>
