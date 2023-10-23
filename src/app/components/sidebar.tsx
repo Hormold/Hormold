@@ -41,7 +41,7 @@ export default function Sidebar() {
 					<Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" />
 					<div className="text-lg font-semibold mb-1.5 dark:text-white">Nikita Podelenko</div>
 					<div className="text-sm text-gray-400 mb-7">Senior Fullstack Developer</div>
-					<a href='/resume.pdf' target='_blank' className="flex group" data-umami-event="cv">
+					<a href={'/resume.pdf?v='+Math.random()} target='_blank' className="flex group" data-umami-event="cv">
 						<button className="download-btn">Download Resume</button>
 						<button className="download-btn-icon" title="Download Resume">
 							<FontAwesomeIcon icon={faDownload} />
