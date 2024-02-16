@@ -6,10 +6,28 @@ const ExperienceData = [
 	{
 		position: 'Senior Fullstack Engineer',
 		type: 'Full time',
+		company: 'Arro',
+		location: 'Los Angeles',
+		startedAt: 'December 2023',
+		endedAt: 'Present',
+		imageName: 'company/arro.webp',
+		companyLink: "https://www.arrofinance.com/",
+		skills: ['TypeScript', 'Node.js', 'AWS', 'React Native', 'CloudFormation', 'Step Functions'],
+		description: `Arro is a Los Angeles-based fintech company democratizing access to credit.`,
+		backgroundColor: '',
+		keyPoints: [
+			'Led the migration from AWS to Nest framework, enhancing system efficiency and performance. This initiative streamlined operations, improving service reliability and scalability.',
+			'Managed backend development and front-end integration of new products, ensuring seamless functionality. My role emphasized creating robust, user-centric solutions that enhanced project outcomes.',
+			'Improved security protocols and introduced best practices for sensitive data management. My efforts fortified data protection measures, reducing vulnerabilities and reinforcing our security posture.',
+		]
+	},
+	{
+		position: 'Senior Fullstack Engineer',
+		type: 'Full time',
 		company: 'ONMoon LLC',
 		location: 'Remote',
 		startedAt: 'September 2015',
-		endedAt: 'Present',
+		endedAt: 'December 2023',
 		skills: [
 			'Node.js',
 			'Nest',

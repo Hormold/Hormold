@@ -60,15 +60,19 @@ export default function Sidebar() {
 					</div>
 					<div className="flex justify-between">
 						<div className="text-gray-400">Experience</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">10+ years</div>
+						<div className="font-medium text-right text-gray-600 dark:text-white">11+ years</div>
 					</div>
 					<div className="flex justify-between">
 						<div className="text-gray-400">Availability</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">~ 1 week</div>
+						<div className="font-medium text-right text-gray-600 dark:text-white">~ 2 week</div>
 					</div>
 					<div className="flex justify-between">
 						<div className="text-gray-400">Relocation</div>
 						<div className="font-medium text-right text-gray-600 dark:text-white">within USA</div>
+					</div>
+					<div className="flex justify-between">
+						<div className="text-gray-400">Work Permit</div>
+						<div className="font-medium text-right text-gray-600 dark:text-white">Green Card</div>
 					</div>
 				</div>
 			</div>
