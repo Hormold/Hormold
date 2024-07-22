@@ -6,6 +6,13 @@
 
 - 📫 How to reach me: **hormold@gmail.com**
 
+<h3 align="left">Recent projects:</h3>
+<p align="left">
+  <ul>
+    <li><a href="https://gptask.io/" target="blank">GPTAsk - Chatbot inside Telegram</a></li>
+    <li><a href="https://github.com/Hormold/gmail-tg-notifications" target="blank">GPT + GMail + Telegram: Notification, analyze & cool UI</a></li>
+  </ul>
+</p>
 
 
 <h3 align="left">Connect with me:</h3>
