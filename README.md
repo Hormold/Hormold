@@ -11,7 +11,7 @@
   <ul>
     <li><a href="https://gptask.io/" target="_blank">GPTAsk - Chatbot inside Telegram</a></li>
     <li><a href="https://github.com/Hormold/gmail-tg-notifications" target="_blank">GPT-4 + GMail + Telegram: Notification, analyze & cool UI</a></li>
-    <li><a href="https://github.com/Hormold/gmail-tg-notifications" target="_blank">GPT-4 + Google Calendar + Whisper + Telegram: Create events in Google Calendar by voice messages in Telegram</a></li>
+    <li><a href="https://github.com/Hormold/voice2cal" target="_blank">GPT-4 + Google Calendar + Whisper + Telegram: Create events in Google Calendar by voice messages in Telegram</a></li>
     <li><a href="https://github.com/Hormold/svg-pattern-generator" target="_blank">SVG Pattern generator (prototype)</a></li>
     <li><a href="https://github.com/Hormold/dexscreener-tracker" target="_blank">Solana Crypto Tracker</a></li>
     <li><a href="https://zillow.podelenko.pro" target="_blank">Zillow Copilot</a></li>
