@@ -27,6 +27,14 @@ const CodeExamplesItems = [
 
 const FunProjects = [
 	{
+		title: "Gmail to Telegram notifications: Built a service that sends Gmail notifications to Telegram using GPT-4 for smart notifications (works really cool!)",
+		url: "https://github.com/Hormold/gmail-tg-notifications"
+	},
+	{
+		title: "Voice to Calendar: A Telegram bot that allows you to add events to your Google Calendar by voice in any language from Telegram bot (I use it daily!)",
+		url: "https://github.com/Hormold/voice2cal",
+	},
+	{
 		title: `React Native UI for GPT: Knew as much about React Native as a goldfish knows about astrophysics when I started`,
 		url: "https://github.com/Hormold/shitchat"
 	},
