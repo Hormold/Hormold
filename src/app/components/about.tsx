@@ -20,21 +20,21 @@ export default function About () {
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faUser} className="mr-2" size='sm' fixedWidth={true} />
 						</span>
-						As a Staff Fullstack Software Engineer with 11+ years experience and authorized to work in the USA, I bring expertise in both backend and frontend software development (within the FinTech, EdTech & Gambling industry mostly before).
-						My backend skills include TypeScript (JavaScript, Node.js) development, contributing to half a million dollars annual revenue growth in my last position. I also work with Python, Go, PHP and Java.
+						As a Staff Fullstack Software Engineer with 11+ years experience and authorized to work in the USA, I bring wide expertise in both backend and frontend software engineering (within the FinTech, EdTech & Gambling industry mostly before). I care a lot about product quality, performance, and user experience. I like ownership and responsibility for the product I work on.
 					</li>
 					<li className='my-2'>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faServer} className="mr-2" />
 						</span>
-						Experienced in cloud application deployment and management using Kubernetes and Docker on Google Cloud Platform, AWS, Azure. Proficient in frontend development with React and Next.js, as well as Vue.js and Nuxt.js frameworks.
+						I have strong experience in <strong>TypeScript (JavaScript, Node.js)</strong>, Python, Go, PHP & Java. Contributing to half a million dollars annual revenue growth in my last positions.
+						Experienced in cloud application deployment and management using Kubernetes and Docker on <strong>Google Cloud Platform</strong>, AWS, Azure. Proficient in frontend development with <strong>React and Next.js</strong>, as well as Vue.js and Nuxt.js frameworks.
 					</li>
 					<li>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faMapMarked} className="mr-2" />
 						</span>
 						
-						Moved to the USA in 2023, I am looking for a 
+						Green card holder, currently residing in Orange County, California. I am open to relocation and remote work opportunities. I am looking for a
 						<div id={!prefersReducedMotion?"counter":""} className={!prefersReducedMotion?"animated px-1":"inline font-bold m-1"}>
 							<ul className={!prefersReducedMotion?"digits digits-first luckie":"inline"}>
 								<li className={prefersReducedMotion?"inline-block before::content-[' '] after:content-['/'] after:mr-1":""}> hybrid </li>
@@ -42,7 +42,7 @@ export default function About () {
 								<li className={prefersReducedMotion?"inline-block ml-1":""}> remote </li>
 							</ul>
 						</div>
-						job as a Fullstack Software Engineer.
+						job as a Staff level Fullstack Software Engineer.
 					</li>
 					<li>
 						<span className="fa-li">
