@@ -13,7 +13,7 @@ export default function About () {
 
 	return (
 		<div className="p-7 pb-0 block-section dark:bg-slate-600 bg-white">
-			<h2 className="block-title dark:text-white">About me {prefersReducedMotion}</h2>
+			<h2 className="block-title dark:text-white">About me</h2>
 			<div className="text-gray-600 mb-5 dark:text-white">
 				<ul className='fa-ul'>
 					<li>

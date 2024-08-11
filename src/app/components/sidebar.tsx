@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faCalendar, faDownload, faEnvelope, faPhone } from '@fortawesome/free-solid-svg-icons'
 import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { getCalApi } from "@calcom/embed-react";
 import { faGithub, faLinkedin, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
@@ -15,13 +15,13 @@ const allSkills = [
 	'React / Next',
 	'Node.js',
 	'Vue / Nuxt',
-	'TypeScript',
 	'Backend Development',
 	'PostgreSQL',
 	'Nest', 'DevOps', 'Google Cloud',
 	'AWS', 'Docker', 'Kubernetes',
 	'CI/CD', 'Microservices', 'REST',
-	'Hasura', 'GraphQL', 'Redis'
+	'Hasura', 'Redis', 'MongoDB', 'Prisma',
+	'Golang', 'Python', 'JavaScript',
 ]
 
 const topSkills = [ ...allSkills.slice(0, 5) ]
@@ -59,7 +59,7 @@ export default function Sidebar() {
 					</a>
 					<div className="flex justify-center mt-4 mb-4">
 						
-						<a href="https://linkedin.com/in/nikita39" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-700 transition-colors">
+						<a href="https://linkedin.com/in/nikita39" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
 							<FontAwesomeIcon icon={faLinkedin} className="w-5 h-5 opacity-70" />
 						</a>
 						<a href="https://x.com/hormold" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
@@ -82,13 +82,13 @@ export default function Sidebar() {
         data-cal-link="nikita-podelenko/quick-chat"
         data-cal-config='{"layout":"month_view"}'
       >
+	  	<FontAwesomeIcon icon={faCalendar} className="mr-2" />
         Schedule a 15-min call
       </button>
 				</div>
 			</div>
 
 			<div className="p-7 block-section my-2 dark:bg-slate-600 bg-white">
-				<h2 className="block-title dark:text-white">Information</h2>
 				<div className="space-y-4">
 					<div className="flex justify-between">
 						<div className="text-gray-400">Location</div>
@@ -111,17 +111,24 @@ export default function Sidebar() {
 			</div>
 
 			<div className="p-7 block-section flow-root my-2 dark:bg-slate-600 bg-white">
-				<h2 className="block-title dark:text-white">Top Skills</h2>
 				<div className="-m-2 flex flex-wrap transition-all duration-300">
 					{(isShowAllSkills? allSkills : topSkills).map((skill, index) => (
-						<span className="skill-tag transition dark:text-white dark:bg-violet-500" key={index}>{skill}</span>
+						<span className="skill-tag skill-tag-animation transition dark:text-white dark:bg-violet-500" key={index}>{skill}</span>
 					))}
-					{isShowAllSkills?'':<span className="skill-tag cursor-pointer dark:bg-violet-500 dark:text-white" title="Show more" onClick={() => setIsShowAllSkills(!isShowAllSkills)}>+{allSkills.length - topSkills.length}</span>}
+					{
+						isShowAllSkills
+							? null
+							: <span
+								className="skill-tag animate-pulse cursor-pointer dark:bg-violet-500 dark:text-white"
+								title="Show more"
+								onClick={() => setIsShowAllSkills(!isShowAllSkills)}>
+								+{allSkills.length - topSkills.length}
+							</span>
+					}
 				</div>
 			</div>
 
 			<div className="p-7 block-section my-2 dark:bg-slate-600 bg-white">
-				<h2 className="block-title dark:text-white">Contacts</h2>
 				<div className="space-y-4">
 					<div className="flex justify-between">
 						<div className="text-gray-400">
@@ -198,7 +205,7 @@ export default function Sidebar() {
 			</div>
 
 			<div className="mt-2 p-1 hidden md:block">
-				<a href="https://kristy.pro" target="_blank" rel="noopener noreferrer">
+				<a href="https://kristy.pro/?ref=nikita" target="_blank" rel="noopener noreferrer">
 					<button className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full">
 						<FontAwesomeIcon icon={faHeart} className="mr-2 text-red-500 hover:text-red-700" />
 						<span>Checkout the best product designer CV (also my wife)</span>
