@@ -2,17 +2,19 @@
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faDownload, faEnvelope } from '@fortawesome/free-solid-svg-icons'
-import { faHeart, faLink } from '@fortawesome/free-solid-svg-icons';
-import { faGithub, faLinkedin, faTelegram } from '@fortawesome/free-brands-svg-icons'
-import { useContext, useState } from 'react'
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
+import { getCalApi } from "@calcom/embed-react";
+import { faGithub, faLinkedin, faTelegram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+import { useContext, useEffect, useState } from 'react'
 import AppContext from "./context"
 import Sparkles from './sparks'
 
 const allSkills = [
-	'JavaScript',
+	'TypeScript',
+	'GraphQL',
+	'React / Next',
 	'Node.js',
 	'Vue / Nuxt',
-	'React / Next',
 	'TypeScript',
 	'Backend Development',
 	'PostgreSQL',
@@ -27,6 +29,14 @@ const topSkills = [ ...allSkills.slice(0, 5) ]
 export default function Sidebar() {
 	const context = useContext(AppContext)
 	const [isShowAllSkills, setIsShowAllSkills] = useState(false)
+
+	useEffect(()=>{
+	  (async function () {
+		const cal = await getCalApi({"namespace":"quick-chat"});
+		cal("ui", {"styles":{"branding":{"brandColor":"#000000"}},"hideEventTypeDetails":false,"layout":"month_view"});
+	  })();
+	}, [])
+
 	return (
 		<div>
 			<div className="shadow rounded-xl overflow-hidden">
@@ -40,13 +50,40 @@ export default function Sidebar() {
 					</span>
 					<Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" />
 					<div className="text-lg font-semibold mb-1.5 dark:text-white">Nikita Podelenko</div>
-					<div className="text-sm text-gray-400 mb-7">Senior Fullstack Developer</div>
+					<div className="text-sm text-gray-400 mb-7">Staff Fullstack Developer</div>
 					<a href={'/resume.pdf?v='+Math.random()} target='_blank' className="flex group" data-umami-event="cv">
 						<button className="download-btn">Download Resume</button>
 						<button className="download-btn-icon" title="Download Resume">
 							<FontAwesomeIcon icon={faDownload} />
 						</button>
 					</a>
+					<div className="flex justify-center mt-4 mb-4">
+						
+						<a href="https://linkedin.com/in/nikita39" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-700 transition-colors">
+							<FontAwesomeIcon icon={faLinkedin} className="w-5 h-5 opacity-70" />
+						</a>
+						<a href="https://x.com/hormold" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
+							<FontAwesomeIcon icon={faTwitter} className="w-5 h-5 opacity-70" />
+						</a>
+						<a href="https://t.me/define" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
+							<FontAwesomeIcon icon={faTelegram} className="w-5 h-5 opacity-70" />
+						</a>
+						<a href="https://github.com/hormold" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
+							<FontAwesomeIcon icon={faGithub} className="w-5 h-5 opacity-70" />
+						</a>
+						<a href="mailto:n.podelenko@gmail.com" target="_blank" rel="noopener noreferrer" className="mx-2 text-gray-400 hover:text-blue-400 transition-colors">
+							<FontAwesomeIcon icon={faEnvelope} className="w-5 h-5 opacity-70" />
+						</a>
+					</div>
+					<div className="text-sm text-gray-400 mb-2 text-center">Want to chat?</div>
+      <button
+        className="w-full text-sm text-white cursor-pointer bg-blue-500 hover:bg-blue-600 transition-colors py-2 px-4 rounded-lg shadow-md"
+        data-cal-namespace="quick-chat"
+        data-cal-link="nikita-podelenko/quick-chat"
+        data-cal-config='{"layout":"month_view"}'
+      >
+        Schedule a 15-min call
+      </button>
 				</div>
 			</div>
 
@@ -67,10 +104,6 @@ export default function Sidebar() {
 						<div className="font-medium text-right text-gray-600 dark:text-white">~ 2 week</div>
 					</div>
 					<div className="flex justify-between">
-						<div className="text-gray-400">Relocation</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">within USA</div>
-					</div>
-					<div className="flex justify-between">
 						<div className="text-gray-400">Work Permit</div>
 						<div className="font-medium text-right text-gray-600 dark:text-white">Green Card</div>
 					</div>
@@ -80,7 +113,7 @@ export default function Sidebar() {
 			<div className="p-7 block-section flow-root my-2 dark:bg-slate-600 bg-white">
 				<h2 className="block-title dark:text-white">Top Skills</h2>
 				<div className="-m-2 flex flex-wrap transition-all duration-300">
-					{(isShowAllSkills?allSkills:topSkills).map((skill, index) => (
+					{(isShowAllSkills? allSkills : topSkills).map((skill, index) => (
 						<span className="skill-tag transition dark:text-white dark:bg-violet-500" key={index}>{skill}</span>
 					))}
 					{isShowAllSkills?'':<span className="skill-tag cursor-pointer dark:bg-violet-500 dark:text-white" title="Show more" onClick={() => setIsShowAllSkills(!isShowAllSkills)}>+{allSkills.length - topSkills.length}</span>}
@@ -93,11 +126,11 @@ export default function Sidebar() {
 					<div className="flex justify-between">
 						<div className="text-gray-400">
 							<FontAwesomeIcon icon={faEnvelope} className="mr-2" />
-							E-Mail
+							Mail
 						</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white text-sm truncate">
+						<div className="text-right text-gray-600 dark:text-white text-sm truncate w-[170px]">
 							<a href="mailto:n.podelenko@gmail.com" target="_blank" data-umami-event="contact" data-umami-event-social="email">
-								n@podelenko.pro
+								n.podelenko@gmail.com
 							</a>
 						</div>
 					</div>

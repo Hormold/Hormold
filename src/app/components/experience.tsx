@@ -2,32 +2,47 @@ import { faCalendar, faMapMarked, faSuitcase } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from "next/image"
 
+const calcDuration = (startedAt: string, endedAt: string) => {
+	const startDate = new Date(startedAt)
+	const endDate = endedAt ? new Date(endedAt) : new Date()
+	const diffTime = Math.abs(endDate.getTime() - startDate.getTime())
+	const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+	const years = Math.floor(diffDays / 365)
+	const months = Math.floor((diffDays - years * 365) / 30)
+	if(months === 0) return `${years} years`
+	if(years === 0) return `${months} months`
+	return `${years} years, ${months} months`
+}
+
 const ExperienceData = [
 	{
-		position: 'Senior Fullstack Engineer',
+		position: 'Staff Fullstack Engineer',
 		type: 'Full time',
 		company: 'Arro',
 		location: 'Los Angeles',
-		startedAt: 'December 2023',
+		startedAt: 'November 2023',
 		endedAt: 'Present',
+		duration: calcDuration(new Date('2023-11-01').toISOString(), new Date().toISOString()),
 		imageName: 'company/arro.webp',
 		companyLink: "https://www.arrofinance.com/",
-		skills: ['TypeScript', 'Node.js', 'AWS', 'React Native', 'CloudFormation', 'Step Functions'],
+		skills: ['TypeScript', 'GraphQL', 'Nest.js', 'Node.js', 'AWS', 'React Native', 'Step Functions', 'Snowflake', 'Retool'],
 		description: `Arro is a Los Angeles-based fintech company democratizing access to credit.`,
 		backgroundColor: '',
 		keyPoints: [
-			'Led the migration from AWS to Nest framework, enhancing system efficiency and performance. This initiative streamlined operations, improving service reliability and scalability.',
-			'Managed backend development and front-end integration of new products, ensuring seamless functionality. My role emphasized creating robust, user-centric solutions that enhanced project outcomes.',
-			'Improved security protocols and introduced best practices for sensitive data management. My efforts fortified data protection measures, reducing vulnerabilities and reinforcing our security posture.',
+			'Led the migration from AWS-centric codebase to the Nest.js framework, enhancing system efficiency and performance. This initiative streamlined operations, improving service reliability and scalability.',
+			'Developed a comprehensive backend for the educational platform Arro using GraphQL (Yoga). This included designing and implementing the API structure, data models, and integration with the front-end, resulting in a robust and scalable solution.',
+			'Created and implemented an advanced "AI" chatbot system, now a key feature of the application. The chatbot utilizes LLM models (GPT-4/Claude) with agents, vector databases, and function calling capabilities. Extensive prompt engineering was involved to optimize performance and user interaction.',
+			'Designed and developed a web-based onboarding process for the company using Next.js, improving new user experience and streamlining the integration of new clients.'
 		]
 	},
 	{
-		position: 'Senior Fullstack Engineer',
+		position: 'Staff Fullstack Engineer',
 		type: 'Full time',
 		company: 'ONMoon LLC',
 		location: 'Remote',
 		startedAt: 'September 2015',
 		endedAt: 'December 2023',
+		duration: calcDuration(new Date('2015-09-01').toISOString(), new Date('2023-12-01').toISOString()),
 		skills: [
 			'Node.js',
 			'Nest',
@@ -52,7 +67,7 @@ const ExperienceData = [
 		backgroundColor: 'black',
 		keyPoints: [
 			'Engineered high-loaded gambling projects, notably market.csgo.com (in 2018), transforming it into a faster, multi-site engine leading to a significant increase in user engagement (60%). I also developed Skinpay.com, the first platform offering immediate payments for in-game skins, contributing to a revenue increase of 40%.',
-			'As a senior backend developer and team leader, I maintained the infrastructure of a full-stack gambling ecosystem for a large, legacy gambling website. Collaborated significantly on the Steam Inventory Helper project, serving 1M users, through creating authorization services and developing APIs.',
+			'As a staff backend developer and team leader, I maintained the infrastructure of a full-stack gambling ecosystem for a large, legacy gambling website. Collaborated significantly on the Steam Inventory Helper project, serving 1M users, through creating authorization services and developing APIs.',
 			'Pioneered MMBets.net, allowing real-money bets on games, was built with a team of two and necessitated extensive use of Steam\'s low-level API. Transferred other legacy projects to contemporary frameworks like Nest and adopted modern communication methods like Google PubSub. Built a robust payment system that processed over 1 million transactions and moved the entire project from dedicated servers to Google Cloud.'
 		]
 	},
@@ -149,7 +164,7 @@ export default function Experience () {
 								<div className="job-item-badge">{item.type}</div>
 								<div className="item-header-info">
 									<FontAwesomeIcon icon={faCalendar} className="h-4 w-4" />
-									<span>{item.startedAt} – {item.endedAt}</span>
+									<span>{item.startedAt} – {item.endedAt} {item.duration?`(${item.duration})`:''}</span>
 								</div>
 							</div>
 						</div>

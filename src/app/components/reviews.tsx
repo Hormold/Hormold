@@ -10,7 +10,20 @@ const ReviewItems = [
 		date: 'July 2023',
 		location: 'Netherlands, Amsterdam',
 		text: 'It was a great pleasure to work with and learn from Nikita. I was completely junior in NodeJS at the time and thanks to his guidance and high-quality code base, we could build the #1 product for years!',
-		imageName: 'https://media.licdn.com/dms/image/C4E03AQE-D-iC_Y4Wmw/profile-displayphoto-shrink_100_100/0/1662705994140?e=1697068800&v=beta&t=oD1zi6awHhQCn8tN1--J8R9v1zdz057cGWbDgK9IJc4',
+		imageName: 'https://media.licdn.com/dms/image/v2/D4E03AQEKrGQYUB1kqw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1695659934544?e=1729123200&v=beta&t=Pj136hkEzVzMY0qRqTr36NhDHI0F6fqxZtFUbuznLug',
+	},
+	{
+		name: 'Christina K.',
+		url: `https://www.linkedin.com/in/kkdesigner`,
+		position: 'Senior Product Designer @ Arro',
+		location: 'Los Angeles',
+		date: 'July 2024',
+		text: `Nikita is a talented and passionate developer who truly loves what he does. I greatly appreciate his ability to explain complex concepts in simple terms.
+
+I’m continually impressed by the speed of his work and his dedication to constantly improving the products he works on. I had the opportunity to collaborate with Nikita on the AI feature in the Arro app. During this project, Nikita proved himself to be a true professional in AI and ML, and it was a pleasure to work with him. His infrastructure solutions were instrumental in launching this feature quickly and ensuring it had excellent performance and speed.
+
+In summary, Nikita’s expertise, enthusiasm, and commitment to excellence make him an outstanding developer and a valuable team member.`,
+imageName: `https://media.licdn.com/dms/image/v2/D5603AQHgIuwc7x63eg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1689617892186?e=1729123200&v=beta&t=HzUEsj-kFtum7fE4q_2te22e7t-Y7TOBoukqxD_oWAo`
 	}
 ]
 
@@ -47,9 +60,9 @@ export default function Reviews () {
 								</div>
 							</div>
 						</div>
-						<p className="text-gray-600 dark:text-white">
-						{item.text}
-					</p>
+						<p className="text-gray-600 dark:text-white whitespace-pre-line">
+							{item.text}
+						</p>
 					</div>
 					
 				</div>

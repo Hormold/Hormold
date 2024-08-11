@@ -4,6 +4,14 @@ const tags = ["gpt-3", "sql", "python", "openai", "postgres"]
 const title = `Make GPT-3 work for you`
 const date = `2023 Feb 04`
 
+const CodeBlock = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <pre className="block whitespace-pre overflow-x-auto break-words bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
+      {children}
+    </pre>
+  );
+};
+
 function Post () {
 	return (
 	<div className="w-full">
@@ -46,51 +54,79 @@ pip install psycopg2 openai</code></p>
 
 <p>Now, start with Schema class:</p>
 
-<pre className="block whitespace-pre-wrap overflow-x-scroll break-words bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
-class Schema:
-  &quot;&quot;&quot;Generate SQL Schema from PostgreSQL&quot;&quot;&quot;
-  
-  def __init__(self, schema = &#39;public&#39;):
-  &quot;&quot;&quot;Connect to PostgreSQL database&quot;&quot;&quot;
-  self.schema = schema
-  try:
-   self.conn = psycopg2.connect(DATABASE_URL)
-  except psycopg2.OperationalError as err:
-   print(f&#39;Unable to connect!\n&#123;err&#125;&#39;)
-   sys.exit(1)
-  else:
-   print(&#39;Connected to PostgreSQL database successfully.&#39;)
-  self.cur = self.conn.cursor()
-  self.comments = []
-  self.tables = []
-  self.columns = []
-</pre>
+<CodeBlock>
+{`class Schema:
+    """Generate SQL Schema from PostgreSQL"""
+    
+    def __init__(self, schema = 'public'):
+        """Connect to PostgreSQL database"""
+        self.schema = schema
+        try:
+            self.conn = psycopg2.connect(DATABASE_URL)
+        except psycopg2.OperationalError as err:
+            print(f'Unable to connect!\n{err}')
+            sys.exit(1)
+        else:
+            print('Connected to PostgreSQL database successfully.')
+        self.cur = self.conn.cursor()
+        self.comments = []
+        self.tables = []
+        self.columns = []`}
+</CodeBlock>
 
 <p>Next, we retrieve the list of tables and their comments. Since comments are stored in a separate location in PostgreSQL, we need to execute an additional query to get all comments for all tables.</p>
 
-<pre className="block whitespace-pre-wrap overflow-x-scroll break-words bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
-def get_tables(self):
- &quot;&quot;&quot;Get list of tables&quot;&quot;&quot;
- self.cur.execute(&quot;SELECT table_name FROM information_schema.tables WHERE table_schema = %s&quot;, (self.schema,))
- tables = self.cur.fetchall()
- self.tables = tables
- return tables
+<CodeBlock>
+{`def get_tables(self):
+    """Get list of tables"""
+    self.cur.execute(
+        "SELECT table_name FROM information_schema.tables WHERE table_schema = %s",
+        (self.schema,)
+    )
+    tables = self.cur.fetchall()
+    self.tables = tables
+    return tables
 
 def get_all_comments(self):
- &quot;&quot;&quot;Get list of all comments&quot;&quot;&quot;
- self.cur.execute(&#39;select c.table_schema, c.table_name,  c.column_name, pgd.description from pg_catalog.pg_statio_all_tables as st inner join pg_catalog.pg_description pgd on (pgd.objoid = st.relid) inner join information_schema.columns c on (pgd.objsubid   = c.ordinal_position and c.table_schema = st.schemaname and c.table_name   = st.relname);&#39;)
- comments = self.cur.fetchall()
- self.comments = comments
- return comments</pre>
+    """Get list of all comments"""
+    self.cur.execute('''
+        SELECT 
+            c.table_schema, 
+            c.table_name,  
+            c.column_name, 
+            pgd.description 
+        FROM 
+            pg_catalog.pg_statio_all_tables AS st 
+        INNER JOIN 
+            pg_catalog.pg_description pgd ON (pgd.objoid = st.relid) 
+        INNER JOIN 
+            information_schema.columns c ON (
+                pgd.objsubid = c.ordinal_position 
+                AND c.table_schema = st.schemaname 
+                AND c.table_name = st.relname
+            )
+    ''')
+    comments = self.cur.fetchall()
+    self.comments = comments
+    return comments`}</CodeBlock>
+
 
 <p>Next, we obtain a list of fields and their data types for each table.</p>
 
-<pre className="block whitespace-pre-wrap overflow-x-scroll bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
+<CodeBlock>
+{`
 def get_columns(self, table):
- &quot;&quot;&quot;Get list of columns for a table&quot;&quot;&quot;
- self.cur.execute(&quot;SELECT column_name, data_type FROM information_schema.columns WHERE table_schema = %s AND table_name = %s&quot;, (self.schema, table))
- columns = self.cur.fetchall()
- return columns</pre>
+    """Get list of columns for a table"""
+    self.cur.execute(
+        """
+        SELECT column_name, data_type 
+        FROM information_schema.columns 
+        WHERE table_schema = %s AND table_name = %s
+        """,
+        (self.schema, table)
+    )
+    columns = self.cur.fetchall()
+    return columns`}</CodeBlock>
 
 <p>We will generate the full structure of the base. In my repository on GitHub you can find the generation for the tables you need, but in this example I will simply generate the structure for all tables.</p>
 
@@ -98,27 +134,36 @@ def get_columns(self, table):
 
 <p>We compile all the information into a single string to create the text structure of the database:</p>
 
-<pre className="block whitespace-pre-wrap overflow-x-scroll bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
-def index(self):
- &quot;&quot;&quot;Generate SQL Schema&quot;&quot;&quot;
- prompt = &#39;&#39;
- tables = self.get_tables()
- comments = self.get_all_comments()
- for table in tables:
-  columns = self.get_columns(table[0])
-  prompt += f&#39;The &quot;&#123;table[0]&#125;&quot; table has columns: &#39;
-  for column in columns:
-   cmnt = &#39;&#39;
-   for comment in comments:
-    if comment[0] == self.schema and comment[1] == table[0] and comment[2] == column[0]:
-     cmnt = comment[3]
-     break
-   if cmnt == &#39;&#39;:
-    prompt += f&#39;&#123;column[0]&#125; (&#123;column[1]&#125;), &#39;
-   else:
-    prompt += f&#39;&#123;column[0]&#125; (&#123;column[1]&#125; - &#123;cmnt&#125;), &#39;
-  prompt = prompt[:-2] + &#39;. &#39;    
- return prompt</pre>
+<CodeBlock>
+{`def index(self):
+    """Generate SQL Schema"""
+    prompt = ''
+    tables = self.get_tables()
+    comments = self.get_all_comments()
+    
+    for table in tables:
+        columns = self.get_columns(table[0])
+        prompt += f'The "{table[0]}" table has columns: '
+        
+        for column in columns:
+            cmnt = ''
+            for comment in comments:
+                if (comment[0] == self.schema and 
+                    comment[1] == table[0] and 
+                    comment[2] == column[0]):
+                    cmnt = comment[3]
+                    break
+            
+            if cmnt == '':
+                prompt += f'{column[0]} ({column[1]}), '
+            else:
+                prompt += f'{column[0]} ({column[1]} - {cmnt}), '
+        
+        prompt = prompt[:-2] + '. '
+    
+    return prompt
+`}
+</CodeBlock>
 
 <p>We now have the text structure of the database. At this point, I created a simple UI using Vue and Bootstrap for ease of use with the API. You can see what it looks like in the first GIF at the beginning of the article.</p>
 
@@ -155,9 +200,31 @@ Given an input question, respond with syntactically correct PostgreSQL. Be creat
 
 <p>For example, we get the following request:</p>
 
-<blockquote className="bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
-Given an input question, respond with syntactically correct PostgreSQL. Be creative but the SQL must be correct, not nessesary to use all tables. The &ldquo;public&rdquo;.&rdquo;users&rdquo; table has columns: id (integer &mdash; user id), name (text &mdash; user name), email (text &mdash; user email). The &ldquo;public&rdquo;.&rdquo;posts&rdquo; table has columns: id (integer &mdash; post id), title (text &mdash; post title), body (text &mdash; post body), user_id (integer &mdash; user id). The &ldquo;public&rdquo;.&rdquo;comments&rdquo; table has columns: id (integer &mdash; comment id), body (text &mdash; comment body), post_id (integer &mdash; post id), user_id (integer &mdash; user id). Instructions: Give me all posts by user where email hosted on gmail.com SQL:
-</blockquote>
+<CodeBlock>
+{`Given an input question, respond with syntactically correct PostgreSQL. Be creative but the SQL must be correct, not necessary to use all tables.
+The "public"."users" table has columns:
+
+id (integer — user id)
+name (text — user name)
+email (text — user email)
+
+The "public"."posts" table has columns:
+
+id (integer — post id)
+title (text — post title)
+body (text — post body)
+user_id (integer — user id)
+
+The "public"."comments" table has columns:
+
+id (integer — comment id)
+body (text — comment body)
+post_id (integer — post id)
+user_id (integer — user id)
+
+Instructions: Give me all posts by user where email hosted on gmail.com
+SQL:`}
+</CodeBlock>
 
 <p>As a result from GPT-3, we can get the following answer (<em>the example was generated by copilot at the time of writing the article, this is mind-blowing!</em>):</p>
 
@@ -179,18 +246,29 @@ Given an input question, respond with syntactically correct PostgreSQL. Be creat
 
 <p>Let&rsquo;s now make a request to the GPT-3 API and get a response:</p>
 
-<pre className="whitespace-pre-wrap  overflow-x-scroll bg-gray-100 p-2 rounded dark:bg-gray-800 dark:text-gray-200">
+<CodeBlock>
+{`query_temperature = 0.5
 
-query_temperature = 0.5
-final_prompt = f&#39;Given an input question, respond with syntactically correct PostgreSQL. Be creative but the SQL must be correct, not nessesary to use all tables.\n\n&#123;sql_schema&#125;\n\nInstructions: &#123;prompt&#125;\n\nSQL:\n&#39;
+final_prompt = f'''
+Given an input question, respond with syntactically correct PostgreSQL. 
+Be creative but the SQL must be correct, not necessary to use all tables.
+
+{sql_schema}
+
+Instructions: {prompt}
+
+SQL:
+'''
+
 gpt_response = openai.completion.create(
-  engine=&quot;text-davinci-003&quot;,
-  prompt=final_prompt,
-  temperature=float(query_temperture),
-  max_tokens=150,
-  stop=[&quot;\n\n&quot;]
+    engine="text-davinci-003",
+    prompt=final_prompt,
+    temperature=float(query_temperature),
+    max_tokens=150,
+    stop=["\n\n"]
 )
-print(f&#39;GPT-3 response: &#123;gpt_response[&quot;choices&quot;][0][&quot;text&quot;]&#125;&#39;)</pre>
+
+print(f'GPT-3 response: {gpt_response["choices"][0]["text"]}')`}</CodeBlock>
 
 <p>You can find the full implementation here:&nbsp;<a href="https://github.com/Hormold/gpt-sql-box/blob/master/cli.py" rel="noopener ugc nofollow" target="_blank">https://github.com/Hormold/gpt-sql-box/blob/master/cli.py</a></p>
 

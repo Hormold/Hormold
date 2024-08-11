@@ -63,7 +63,7 @@ const FunProjects = [
 export default function CodeExamples () {
 	return (
 		<div className="p-7 block-section dark:bg-slate-600 bg-white">
-			<h2 className="block-title dark:text-white">Code Examples</h2>
+			{/*<h2 className="block-title dark:text-white">Code Examples</h2>
 			{CodeExamplesItems.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					<a href={item.url} target="_blank" rel="noreferrer" className="company-logo">
@@ -103,9 +103,9 @@ export default function CodeExamples () {
 					</div>
 					
 				</div>
-			))}
+			))
 
-			<hr className='my-5' />
+			<hr className='my-5' />*/}
 
 			<h2 className="block-title dark:text-white" id="fun">Fun Projects</h2>
 
