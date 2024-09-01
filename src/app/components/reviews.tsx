@@ -24,6 +24,15 @@ I’m continually impressed by the speed of his work and his dedication to const
 
 In summary, Nikita’s expertise, enthusiasm, and commitment to excellence make him an outstanding developer and a valuable team member.`,
 imageName: `https://media.licdn.com/dms/image/v2/D5603AQHgIuwc7x63eg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1689617892186?e=1729123200&v=beta&t=HzUEsj-kFtum7fE4q_2te22e7t-Y7TOBoukqxD_oWAo`
+	},
+	{
+		name: 'Daniel Williams',
+		position: 'Senior Frontend Developer and Open Source Maintainer @ Arro',
+		url: 'https://www.linkedin.com/in/danielhwilliams/',
+		location: 'Remote',
+		date: 'August 2024',
+		text: `I had the pleasure of working closely with Nikita, and I was consistently impressed by his ability to create value in a short time frame. Nikita is a great problem solver who often takes it upon himself to find ways to fix whatever is blocking the team or slowing them down. His work ethic is second to none, and he's the most efficient developer I've seen, mastering his tools and using them to deliver results quickly. He is always on top of the latest technology and truly takes an interest in his craft. Nikita has also proven his ability across the stack and was quick to grasp the nuances of our system, getting involved wherever he could provide the most value. I highly recommend Nikita for any team, and I'm grateful to have worked with and learned from him.`,
+		imageName: `https://media.licdn.com/dms/image/v2/C4D03AQHU_X-lcuG6xg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1662745249033?e=1730937600&v=beta&t=Bk-MVOUZrAbsMGZCZNtC_Al8EDGipdZ9fLie9N9k8XE`,
 	}
 ]
 
@@ -41,7 +50,9 @@ export default function Reviews () {
 					<div className="w-full space-y-5">
 						<div className="item-header items-end">
 							<div className="space-y-1.5">
-								<div className="font-medium dark:text-white">{item.name}</div>
+								<a href={item.url} target="_blank">
+									<div className="font-medium dark:text-white">{item.name}</div>
+								</a>
 								<div className="flex space-x-5">
 									<div className="item-header-info">
 										<FontAwesomeIcon icon={faSuitcase} className="h-4 w-4" />

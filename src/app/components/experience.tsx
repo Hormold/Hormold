@@ -25,18 +25,18 @@ const ExperienceData = [
 		duration: calcDuration(new Date('2023-11-01').toISOString(), new Date().toISOString()),
 		imageName: 'company/arro.webp',
 		companyLink: "https://www.arrofinance.com/",
-		skills: ['TypeScript', 'GraphQL', 'Nest.js', 'Node.js', 'AWS', 'React Native', 'Step Functions', 'Snowflake', 'Retool'],
-		description: `Arro is a Los Angeles-based fintech company democratizing access to credit.`,
+		skills: ['TypeScript', 'Next.js', 'GraphQL', 'Nest.js', 'Node.js', 'AWS', 'React Native', 'Step Functions', 'Snowflake', 'Retool', 'GPT-4', 'Claude', 'LLM', 'AI', 'Chatbot', 'Microservices', 'Docker', 'Kubernetes', 'PostgreSQL', 'Redis'],
+		description: `Arro is a growing Los Angeles-based fintech company democratizing access to credit.`,
 		backgroundColor: '',
 		keyPoints: [
 			'Led the migration from AWS-centric codebase to the Nest.js framework, enhancing system efficiency and performance. This initiative streamlined operations, improving service reliability and scalability.',
 			'Developed a comprehensive backend for the educational platform Arro using GraphQL (Yoga). This included designing and implementing the API structure, data models, and integration with the front-end, resulting in a robust and scalable solution.',
-			'Created and implemented an advanced "AI" chatbot system, now a key feature of the application. The chatbot utilizes LLM models (GPT-4/Claude) with agents, vector databases, and function calling capabilities. Extensive prompt engineering was involved to optimize performance and user interaction.',
+			'Created and implemented an advanced AI/LLM-based chatbot, now a key feature of the application. The chatbot utilizes LLM models (GPT-4/Claude) with agents, vector databases, and function calling capabilities. Extensive prompt engineering was involved to optimize performance and user interaction.',
 			'Designed and developed a web-based onboarding process for the company using Next.js, improving new user experience and streamlining the integration of new clients.'
 		]
 	},
 	{
-		position: 'Staff Fullstack Engineer',
+		position: 'Founding Engineer',
 		type: 'Full time',
 		company: 'ONMoon LLC',
 		location: 'Remote',
@@ -61,18 +61,20 @@ const ExperienceData = [
 			'PHP',
 			'Chrome Extensions',
 			'E-Commerce',
+			'1M+ Users',
+			'100K DAU',
 		],
-		description: `As a collaborative team member in a flat structured organization, I played influential roles in various facets of project development. Engaging in product designing, code development, testing, and project management, I showcased multifaceted skills while directly contributing to each project's success in the absence of traditional management.`,
+		description: `As a founding engineer in a flat structured organization, I played influential roles in various facets of project development. Engaging in product designing, code development, testing, and project owning, I showcased multifaceted skills while directly contributing to each project's success in the absence of traditional management.`,
 		imageName: 'company/onmoon.svg',
 		backgroundColor: 'black',
 		keyPoints: [
-			'Engineered high-loaded gambling projects, notably market.csgo.com (in 2018), transforming it into a faster, multi-site engine leading to a significant increase in user engagement (60%). I also developed Skinpay.com, the first platform offering immediate payments for in-game skins, contributing to a revenue increase of 40%.',
-			'As a staff backend developer and team leader, I maintained the infrastructure of a full-stack gambling ecosystem for a large, legacy gambling website. Collaborated significantly on the Steam Inventory Helper project, serving 1M users, through creating authorization services and developing APIs.',
+			'Engineered high-loaded eSports/fintech projects, notably market.csgo.com (in 2018), transforming it into a faster, multi-site engine leading to a significant increase in user engagement (60%). I also developed Skinpay.com, the first platform offering immediate payments for in-game skins, contributing to a revenue increase of 40%.',
+			'As a founding engineer and team leader, I maintained the infrastructure of a full-stack gambling ecosystem for a large, legacy gambling website. Collaborated significantly on the Steam Inventory Helper project, serving 1M users, through creating authorization services and developing APIs.',
 			'Pioneered MMBets.net, allowing real-money bets on games, was built with a team of two and necessitated extensive use of Steam\'s low-level API. Transferred other legacy projects to contemporary frameworks like Nest and adopted modern communication methods like Google PubSub. Built a robust payment system that processed over 1 million transactions and moved the entire project from dedicated servers to Google Cloud.'
 		]
 	},
 	{
-		position: 'Full Stack Engineer, Architect',
+		position: 'Founding Engineer',
 		type: 'Part time',
 		company: 'iGambling Development',
 		location: 'Remote',
@@ -94,7 +96,7 @@ const ExperienceData = [
 		backgroundColor: '#173267',
 	},
 	{
-		position: 'Web Developer',
+		position: 'Founding Engineer',
 		type: 'Full time',
 		company: 'MDK',
 		companyLink: `https://en.wikipedia.org/wiki/MDK_(community)`,
@@ -128,7 +130,7 @@ const ExperienceData = [
 export default function Experience () {
 	return (
 		<div className="p-7 block-section dark:bg-slate-600 bg-white">
-			<h2 className="block-title dark:text-white">Experience</h2>
+			<h2 className="block-title dark:text-white">Over 11 Years of Professional Expertise in:</h2>
 			{ExperienceData.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					{item.companyLink ? (

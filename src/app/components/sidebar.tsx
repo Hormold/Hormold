@@ -41,6 +41,7 @@ export default function Sidebar() {
 		<div>
 			<div className="shadow rounded-xl overflow-hidden">
 				<div className="h-32 bg-cover" style={{"backgroundImage": "url('/cover2.jpg')"}}></div>
+				
 				<div className="pt-14 p-7 bg-white relative dark:bg-slate-600">
 					
 					<span className="status-badge bg-green-400">
@@ -50,7 +51,7 @@ export default function Sidebar() {
 					</span>
 					<Image src="/me.jpg" width='100' height='100' alt="Avatar" className="user-photo" />
 					<div className="text-lg font-semibold mb-1.5 dark:text-white">Nikita Podelenko</div>
-					<div className="text-sm text-gray-400 mb-7">Staff Fullstack Developer</div>
+					<div className="text-sm text-gray-400 mb-7">Founding Fullstack Engineer</div>
 					<a href={'/resume.pdf?v='+Math.random()} target='_blank' className="flex group" data-umami-event="cv">
 						<button className="download-btn">Download Resume</button>
 						<button className="download-btn-icon" title="Download Resume">
@@ -76,15 +77,15 @@ export default function Sidebar() {
 						</a>
 					</div>
 					<div className="text-sm text-gray-400 mb-2 text-center">Want to chat?</div>
-      <button
-        className="w-full text-sm text-white cursor-pointer bg-blue-500 hover:bg-blue-600 transition-colors py-2 px-4 rounded-lg shadow-md"
-        data-cal-namespace="quick-chat"
-        data-cal-link="nikita-podelenko/quick-chat"
-        data-cal-config='{"layout":"month_view"}'
-      >
-	  	<FontAwesomeIcon icon={faCalendar} className="mr-2" />
-        Schedule a 15-min call
-      </button>
+						<button
+							className="w-full text-sm text-white cursor-pointer bg-blue-500 hover:bg-blue-600 transition-colors py-2 px-4 rounded-lg shadow-md"
+							data-cal-namespace="quick-chat"
+							data-cal-link="nikita-podelenko/quick-chat"
+							data-cal-config='{"layout":"month_view"}'
+						>
+							<FontAwesomeIcon icon={faCalendar} className="mr-2" />
+							Schedule a 15-min call
+						</button>
 				</div>
 			</div>
 
@@ -208,7 +209,7 @@ export default function Sidebar() {
 				<a href="https://kristy.pro/?ref=nikita" target="_blank" rel="noopener noreferrer">
 					<button className="flex items-center justify-center px-4 py-2 bg-blue-500 text-white text-sm font-medium rounded hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 w-full">
 						<FontAwesomeIcon icon={faHeart} className="mr-2 text-red-500 hover:text-red-700" />
-						<span>Checkout the best product designer CV (also my wife)</span>
+						<span>Checkout the best product designer CV</span>
 						<FontAwesomeIcon icon={faHeart} className="ml-2 text-red-500 hover:text-red-700" />
 					</button>
 				</a>

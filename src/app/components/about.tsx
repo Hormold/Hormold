@@ -20,7 +20,7 @@ export default function About () {
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faUser} className="mr-2" size='sm' fixedWidth={true} />
 						</span>
-						As a Staff Fullstack Software Engineer with 11+ years experience and authorized to work in the USA, I bring wide expertise in both backend and frontend software engineering (within the FinTech, EdTech & Gambling industry mostly before). I care a lot about product quality, performance, and user experience. I like ownership and responsibility for the product I work on.
+						As a Founding Fullstack Software Engineer with 11+ years experience and authorized to work in the USA, I bring wide expertise in both backend and frontend software engineering (Also the FinTech, EdTech & Gambling industry wide expirence). I care a lot about product quality, performance, and user experience. I like product ownership and responsibility for the product I work on.
 					</li>
 					<li className='my-2'>
 						<span className="fa-li">
@@ -42,14 +42,14 @@ export default function About () {
 								<li className={prefersReducedMotion?"inline-block ml-1":""}> remote </li>
 							</ul>
 						</div>
-						job as a Staff level Fullstack Software Engineer.
+						job as a Founding / Staff level Fullstack Software Engineer.
 					</li>
 					<li>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faDog} className="mr-2" />
 						</span>
 							Proud father of a good-australian-shepherd-boy (check out Fun Mode!). I am a big fan of the surfing, hiking, camping, and fire pit on ocean beach.
-							I also EV enthusiast and a big fan of Tesla.
+							I also EV enthusiast and a big fan of Tesla & new space technologies.
 						</li>
 				</ul>
 				
