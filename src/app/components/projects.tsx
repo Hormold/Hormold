@@ -1,8 +1,54 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLayerGroup, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
-const projectsData = [
+type Project = {
+	title: string;
+	description: string;
+	keyPoints: string[];
+	stack: string[];
+	website: string;
+	status: string;
+	imageName: IconDefinition | string;
+	role: string;
+}
+
+const projectsData: Project[] = [
+	{
+		title: 'CMD-C',
+		description: 'A native macOS app designed for real-time text correction in any application with a triple-copy shortcut, utilizing AI-powered feedback.',
+		keyPoints: [
+			`Built with a focus on seamless user experience for macOS`,
+			`Supports automatic text correction by sending highlighted text to OpenAI, Anthropic, or a personal server with license access`,
+			`Provides users with detailed feedback, showcasing both original and corrected text along with explanations`,
+			`Designed to work universally across apps without any specific app dependencies`,
+			`Targets quick text edits (300-400 characters) with a robust interface that doesn’t disrupt workflow`,
+			`Offers weekly improvement reports to track user progress over time`,
+		],
+		stack: ['Swift', 'SwiftUI', 'Nest.js', 'OpenAI API', 'Anthropic API', 'React'],
+		website: 'https://cmd-c.app',
+		status: 'Production',
+		imageName: 'projects/cmdc.png',
+		role: 'Solo Founder'
+	},
+	{
+		title: 'Gmail to Telegram Notifications',
+		description: 'A Telegram bot that forwards Gmail emails to any chat, channel, or private group, utilizing GPT-4 for content filtering.',
+		keyPoints: [
+			'Developed in TypeScript and hosted on Google Cloud Platform (GCP)',
+			'Integrates with the Gmail API to monitor and retrieve emails in real-time',
+			'Utilizes GPT-4o to filter and prioritize emails based on content relevance',
+			'Supports forwarding emails to various Telegram destinations, including individual chats, channels, and private groups',
+			'Ensures user privacy and data security by adhering to best practices in handling email content',
+			'Offers customizable filtering options to tailor notifications to user preferences',
+		],
+		stack: ['TypeScript', 'Node.js', 'Google Cloud Platform', 'Telegram API', 'Gmail API', 'GPT-4'],
+		website: 'https://github.com/Hormold/gmail-tg-notifications',
+		status: 'Production',
+		imageName: faGithub,
+		role: 'Developer'
+	},
 	{
 		title: 'GPTaskBot',
 		description: 'A revolutionary chatbot powered by cutting-edge technology that can answer any question and perform any task inside Telegram with 60k+ users',
@@ -20,20 +66,6 @@ const projectsData = [
 		imageName: 'projects/gptask.jpg',
 		role: 'Co-Founder, Developer'
 	}, 
-	{
-		title: 'TON.cash',
-		description: 'Peer-to-peer exchange platform for cash and cryptocurrency',
-		keyPoints: [
-			`Developed in TypeScript and hosted on DigialOcean App Platform`,
-			`This platform allows users to exchange cash and cryptocurrency with each other, without the need for a middleman.`,
-			`Platform helps users to find the best exchange rate and the most convenient location for the exchange.`,
-		],
-		stack: ['TypeScript', 'Node.js', 'DigitalOcean App Platform', 'Nuxt3', 'Vue3', 'Python'],
-		website: 'https://ton.cash/',
-		status: 'WIP',
-		imageName: 'projects/toncash.svg',
-		role: 'Founder, Developer'
-	},
 	{
 		title: 'Voice2Calendar',
 		description: 'Again, a Telegram bot that allows you to add events to your Google Calendar by voice',
@@ -60,7 +92,11 @@ export default function Projects () {
 			{projectsData.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					<a href={item.website} target="_blank" rel="noreferrer" className="company-logo">
-						<Image src={`/${item.imageName}`} alt={item.title} width={50} height={50} className="p-1 rounded-lg" />
+						{typeof item.imageName === 'string' ? (
+							<Image src={`/${item.imageName}`} alt={item.title} width={50} height={50} className="p-1 rounded-lg" />
+						) : (
+							<FontAwesomeIcon icon={item.imageName} className="h-8 w-8" />
+						)}
 					</a>
 
 					<div className="w-full space-y-5">
