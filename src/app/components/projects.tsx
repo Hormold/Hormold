@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faLayerGroup, faUser, IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import { faLayerGroup, faUser, faPhone, IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 type Project = {
@@ -23,7 +23,7 @@ const projectsData: Project[] = [
 			`Supports automatic text correction by sending highlighted text to OpenAI, Anthropic, or a personal server with license access`,
 			`Provides users with detailed feedback, showcasing both original and corrected text along with explanations`,
 			`Designed to work universally across apps without any specific app dependencies`,
-			`Targets quick text edits (300-400 characters) with a robust interface that doesn’t disrupt workflow`,
+			`Targets quick text edits (300-400 characters) with a robust interface that doesn't disrupt workflow`,
 			`Offers weekly improvement reports to track user progress over time`,
 		],
 		stack: ['Swift', 'SwiftUI', 'Nest.js', 'OpenAI API', 'Anthropic API', 'React'],
@@ -66,22 +66,54 @@ const projectsData: Project[] = [
 		imageName: 'projects/gptask.jpg',
 		role: 'Co-Founder, Developer'
 	}, 
+	//{
+	//	title: 'Voice2Calendar',
+	//	description: 'Again, a Telegram bot that allows you to add events to your Google Calendar by voice',
+	//	keyPoints: [
+	//		`Developed in TypeScript and hosted on Google Cloud Functions`,
+	//		`This chatbot allows users to add events to their Google Calendar by voice.`,
+	//		`Chatbot can use Whisper to recognize voice messages in any languages`,
+	//		`Chatbot using langchain to extract event information from messages, use search engine to find event location and add event to Google Calendar`,
+	//		`Has a paid subscription model with free option`,
+	//		`Used Redis as a storage (Yep, I know, it is not a database, but it is fast and cheap to store small amount of data)`,
+	//	],
+	//	stack: ['TypeScript', 'Cloud Functions', 'grammY', 'Google Calendar API', 'Whisper', 'Langchain'],
+	//	website: 'https://t.me/voice2calbot',
+	//	status: 'Production',
+	//	imageName: 'projects/calendar.png',
+	//	role: 'Founder, Developer'
+	//},
 	{
-		title: 'Voice2Calendar',
-		description: 'Again, a Telegram bot that allows you to add events to your Google Calendar by voice',
+		title: 'SkipCalls (B2B)',
+		description: 'AI-powered 24/7 phone agent that answers and makes calls for small & medium businesses, booking appointments, answering FAQs and syncing with CRMs.',
 		keyPoints: [
-			`Developed in TypeScript and hosted on Google Cloud Functions`,
-			`This chatbot allows users to add events to their Google Calendar by voice.`,
-			`Chatbot can use Whisper to recognize voice messages in any languages`,
-			`Chatbot using langchain to extract event information from messages, use search engine to find event location and add event to Google Calendar`,
-			`Has a paid subscription model with free option`,
-			`Used Redis as a storage (Yep, I know, it is not a database, but it is fast and cheap to store small amount of data)`,
+			'Built voice server, agent constructor, web dashboard and backend single-handedly',
+			'Evolved from custom voice orchestration to LiveKit-based engine (Python) with GPT-4o function calling and vector search for dynamic FAQ handling',
+			'Implemented calendar integrations (Google / Outlook) for real-time appointment booking',
+			'Deployed backend services on AWS with custom voice infrastructure and infra as code',
+			'Pipeline handles thousands of parallel calls with <150 ms latency; all transcripts stored in Postgres + S3',
+			'Product live at skipcalls.com with self-service onboarding & free trial plan',
 		],
-		stack: ['TypeScript', 'Cloud Functions', 'grammY', 'Google Calendar API', 'Whisper', 'Langchain'],
-		website: 'https://t.me/voice2calbot',
+		stack: ['TypeScript', 'Python', 'Nest.js', 'React', 'Next.js', 'React Query', 'PostgreSQL', 'Redis', 'OpenAI GPT-4o', 'AWS', 'LiveKit', 'Custom Voice Infrastructure'],
+		website: 'https://skipcalls.com',
 		status: 'Production',
-		imageName: 'projects/calendar.png',
-		role: 'Founder, Developer'
+		imageName: 'company/skipcalls.avif',
+		role: 'Founder'
+	},
+	{
+		title: 'SkipCalls – AI Calls & Voicemail (B2C)',
+		description: 'React-Native mobile app (iOS & Android) that serves as a client interface for users to deploy AI agents for making and receiving calls on their behalf.',
+		keyPoints: [
+			'React-Native Expo app that allows users to send AI agents to make calls and receive calls through AI agents',
+			'Client interface for the SkipCalls platform with simple UI for deploying voice agents',
+			'Designed and implemented subscription system with in-app purchases (App Store / Play Billing)',
+			'Released to public – ranked in top 100 productivity apps during launch week',
+		],
+		stack: ['React Native', 'Expo', 'TypeScript', 'Python', 'LiveKit', 'GPT-4o', 'App Store Connect', 'Google Play'],
+		website: 'https://skipcalls.app',
+		status: 'Production',
+		imageName: 'company/skipcalls.avif',
+		role: 'Founder'
 	}
 ];
 

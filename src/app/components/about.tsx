@@ -63,6 +63,9 @@ export default function About () {
 					<Link href="/" className={(currentRoute === '/'?'menu-link-active':'menu-link')+" menu-link-hover"}>Resume</Link>
 				</li>
 				<li>
+					<Link href="/chat" className={(currentRoute === '/chat'?'menu-link-active':'menu-link')+" menu-link-hover"}>Let&apos;s Chat</Link>
+				</li>
+				<li>
 					<Link href="/blog" className={(currentRoute === '/blog'?'menu-link-active':'menu-link')+" menu-link-hover"}>Blog</Link>
 				</li>
 			</ul>

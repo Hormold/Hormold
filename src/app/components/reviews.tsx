@@ -1,4 +1,5 @@
 import { faCalendar, faMapMarked, faSuitcase } from '@fortawesome/free-solid-svg-icons'
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const ReviewItems = [
@@ -43,7 +44,8 @@ export default function Reviews () {
 			{ReviewItems.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					<a href={item.url} target="_blank">
-						<div className="flex-shrink-0 w-12 h-12 rounded-xl bg-cover" style={{backgroundImage: `url(${item.imageName})`}}>
+						<div className="flex-shrink-0 w-12 h-12 rounded-xl bg-blue-500 flex items-center justify-center">
+							<FontAwesomeIcon icon={faLinkedin} className="text-white text-xl" />
 						</div>
 					</a>
 

@@ -2,7 +2,23 @@ import { faCalendar, faMapMarked, faSuitcase } from '@fortawesome/free-solid-svg
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Image from "next/image"
 
-const calcDuration = (startedAt: string, endedAt: string) => {
+type ExperienceItem = {
+	position: string;
+	type: string;
+	company: string;
+	location: string;
+	startedAt: string;
+	endedAt: string;
+	duration?: string;
+	imageName: string;
+	companyLink?: string;
+	skills: string[];
+	description: string;
+	backgroundColor?: string;
+	keyPoints: string[];
+}
+
+const calcDuration = (startedAt: string, endedAt?: string) => {
 	const startDate = new Date(startedAt)
 	const endDate = endedAt ? new Date(endedAt) : new Date()
 	const diffTime = Math.abs(endDate.getTime() - startDate.getTime())
@@ -14,15 +30,38 @@ const calcDuration = (startedAt: string, endedAt: string) => {
 	return `${years} years, ${months} months`
 }
 
-const ExperienceData = [
+const ExperienceData: ExperienceItem[] = [
+	{
+		position: 'Founder & CEO',
+		type: 'Full time',
+		company: 'SkipCalls',
+		location: 'Remote',
+		startedAt: 'January 2025',
+		endedAt: 'Present',
+		duration: calcDuration(new Date('2025-01-01').toISOString()),
+		imageName: 'company/skipcalls.avif',
+		companyLink: "https://skipcalls.com",
+		skills: ['TypeScript', 'Python', 'React Native', 'Expo', 'Nest.js', 'Node.js', 'PostgreSQL', 'Redis', 'OpenAI GPT-4o', 'AWS', 'Voice-over-IP', 'React Query', 'AI Agents', 'Vector Search', 'Function Calling', 'LiveKit'],
+		description: `SkipCalls is an AI-powered voice assistant platform with B2B and B2C products. The B2C mobile app is a client interface that allows users to send AI agents to make calls on their behalf and receive calls through AI agents.`,
+		backgroundColor: '#1a1a1a',
+		keyPoints: [
+			'Built the entire platform single-handedly: custom voice infrastructure, agent constructor, React Native mobile app, web dashboard, backend services, and AI agent systems',
+			'Developed B2B solution (skipcalls.com) - 24/7 AI phone agents that handle inbound/outbound calls for businesses, book appointments, answer FAQs, and integrate with CRMs and calendars',
+			'Created B2C React Native app (iOS & Android) that serves as a client interface for users to deploy AI agents for making and receiving calls on their behalf',
+			'Initially built custom voice orchestration engine, then migrated to LiveKit-based infrastructure (Python) for improved scalability and performance',
+			'Deployed backend services on AWS, handling call routing and real-time transcription storage with custom voice infrastructure',
+			'Implemented subscription systems with App Store Connect and Google Play Billing, achieved top 100 productivity app ranking during launch week',
+			'Product serves small businesses (salons, real estate, cleaning services) and individual users dealing with phone anxiety or accessibility needs'
+		]
+	},
 	{
 		position: 'Staff Fullstack Engineer',
 		type: 'Full time',
 		company: 'Arro',
 		location: 'Los Angeles',
 		startedAt: 'November 2023',
-		endedAt: 'Present',
-		duration: calcDuration(new Date('2023-11-01').toISOString(), new Date().toISOString()),
+		endedAt: 'February 2025',
+		duration: calcDuration(new Date('2023-11-01').toISOString(), new Date('2025-02-01').toISOString()),
 		imageName: 'company/arro.webp',
 		companyLink: "https://www.arrofinance.com/",
 		skills: ['TypeScript', 'Next.js', 'GraphQL', 'Nest.js', 'Node.js', 'AWS', 'React Native', 'Step Functions', 'Snowflake', 'Retool', 'GPT-4', 'Claude', 'LLM', 'AI', 'Chatbot', 'Microservices', 'Docker', 'Kubernetes', 'PostgreSQL', 'Redis'],
@@ -35,6 +74,7 @@ const ExperienceData = [
 			'Designed and developed a web-based onboarding process for the company using Next.js, improving new user experience and streamlining the integration of new clients.'
 		]
 	},
+
 	{
 		position: 'Founding Engineer',
 		type: 'Full time',
@@ -105,7 +145,7 @@ const ExperienceData = [
 		endedAt: 'September 2015',
 		skills: ['PHP', 'MySQL', 'JavaScript', 'jQuery', 'HTML', 'CSS', 'Bootstrap', 'Git'],
 		description: `LAMP stack, One and alone of a small russian media company. We making gaming projects, internal services like spam cleaning tool for comments in VK social networks (SaaS).`,
-		keyPoints: [`Primary project - first-ever skins (in-game items, like CS:GO) jackpot website using Steam “API” in 2015. I made a backend for an early version of the website. It was hard because nobody before us do not use in-game skins for gambling. This is my first experience with virtual goods and gambling.`],
+		keyPoints: [`Primary project - first-ever skins (in-game items, like CS:GO) jackpot website using Steam "API" in 2015. I made a backend for an early version of the website. It was hard because nobody before us do not use in-game skins for gambling. This is my first experience with virtual goods and gambling.`],
 		imageName: 'company/mdk.jpg',
 	},
 	{
