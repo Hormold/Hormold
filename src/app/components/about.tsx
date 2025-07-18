@@ -20,21 +20,28 @@ export default function About () {
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faUser} className="mr-2" size='sm' fixedWidth={true} />
 						</span>
-						As a Founding Fullstack Software Engineer with 11+ years experience and authorized to work in the USA, I bring wide expertise in both backend and frontend software engineering (Also the FinTech, EdTech & Gambling industry wide expirence). I care a lot about product quality, performance, and user experience. I like product ownership and responsibility for the product I work on.
+						<strong>Founding Fullstack Software Engineer</strong> with <strong>13+ years experience</strong>. Green card holder authorized to work in the USA. Built AI voice platforms, FinTech solutions, and gambling platforms serving 10M+ users with $1M+ revenue impact.
 					</li>
 					<li className='my-2'>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faServer} className="mr-2" />
 						</span>
-						I have strong experience in <strong>TypeScript (JavaScript, Node.js)</strong>, Python, Go, PHP & Java. Contributing to half a million dollars annual revenue growth in my last positions.
-						Experienced in cloud application deployment and management using Kubernetes and Docker on <strong>Google Cloud Platform</strong>, AWS, Azure. Proficient in frontend development with <strong>React and Next.js</strong>, as well as Vue.js and Nuxt.js frameworks.
+						<div className='my-2'>
+						<strong>Tech Stack:</strong> TypeScript, JavaScript, Python, React, Next.js, Node.js, NestJS, GraphQL. 
+						</div>
+						<div className='my-2'>
+						<strong>AI & Voice:</strong> OpenAI GPT-4o, LiveKit, AI Agents, Vector Search. 
+						</div>
+						<div className='my-2'>
+						<strong>Cloud:</strong> AWS, GCP, Kubernetes, Docker, PostgreSQL, MongoDB.
+						</div>
 					</li>
 					<li>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faMapMarked} className="mr-2" />
 						</span>
 						
-						Green card holder, currently residing in Orange County, California. I am open to relocation and remote work opportunities. I am looking for a
+						Based in <strong>Orange County, California</strong>. Open to
 						<div id={!prefersReducedMotion?"counter":""} className={!prefersReducedMotion?"animated px-1":"inline font-bold m-1"}>
 							<ul className={!prefersReducedMotion?"digits digits-first luckie":"inline"}>
 								<li className={prefersReducedMotion?"inline-block before::content-[' '] after:content-['/'] after:mr-1":""}> hybrid </li>
@@ -42,15 +49,14 @@ export default function About () {
 								<li className={prefersReducedMotion?"inline-block ml-1":""}> remote </li>
 							</ul>
 						</div>
-						job as a Founding / Staff level Fullstack Software Engineer.
+						opportunities as <strong>Staff/Founding Fullstack Engineer</strong>.
 					</li>
 					<li>
 						<span className="fa-li">
 							<FontAwesomeIcon icon={faDog} className="mr-2" />
 						</span>
-							Proud father of a good-australian-shepherd-boy (check out Fun Mode!). I am a big fan of the surfing, hiking, camping, and fire pit on ocean beach.
-							I also EV enthusiast and a big fan of Tesla & new space technologies.
-						</li>
+						Australian Shepherd dad. Surfing, hiking 100+ California trails, space tech enthusiast, Tesla/EV fan.
+					</li>
 				</ul>
 				
 			</div>

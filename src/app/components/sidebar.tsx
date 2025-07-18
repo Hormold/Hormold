@@ -11,20 +11,35 @@ import Sparkles from './sparks'
 
 const allSkills = [
 	'TypeScript',
-	'GraphQL',
-	'React / Next',
+	'JavaScript', 
+	'Python',
+	'React / Next.js',
+	'React Native',
 	'Node.js',
-	'Vue / Nuxt',
-	'Backend Development',
+	'NestJS',
+	'GraphQL',
+	'OpenAI GPT-4o',
+	'AI Agents',
+	'LiveKit',
+	'Vector Search',
 	'PostgreSQL',
-	'Nest', 'DevOps', 'Google Cloud',
-	'AWS', 'Docker', 'Kubernetes',
-	'CI/CD', 'Microservices', 'REST',
-	'Hasura', 'Redis', 'MongoDB', 'Prisma',
-	'Golang', 'Python', 'JavaScript',
+	'MongoDB',
+	'AWS',
+	'Google Cloud',
+	'Kubernetes',
+	'Docker',
+	'CloudFormation',
+	'Vue / Nuxt',
+	'REST APIs',
+	'Microservices',
+	'CI/CD',
+	'DevOps',
+	'Redis',
+	'Prisma',
+	'MySQL'
 ]
 
-const topSkills = [ ...allSkills.slice(0, 5) ]
+const topSkills = [ ...allSkills.slice(0, 6) ]
 
 export default function Sidebar() {
 	const context = useContext(AppContext)
@@ -98,7 +113,7 @@ export default function Sidebar() {
 					</div>
 					<div className="flex justify-between">
 						<div className="text-gray-400">Experience</div>
-						<div className="font-medium text-right text-gray-600 dark:text-white">11+ years</div>
+						<div className="font-medium text-right text-gray-600 dark:text-white">13+ years</div>
 					</div>
 					<div className="flex justify-between">
 						<div className="text-gray-400">Availability</div>
