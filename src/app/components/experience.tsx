@@ -170,7 +170,7 @@ const ExperienceData: ExperienceItem[] = [
 export default function Experience () {
 	return (
 		<div className="p-7 block-section dark:bg-slate-600 bg-white">
-			<h2 className="block-title dark:text-white">Over 11 Years of Professional Expertise in:</h2>
+			<h2 className="block-title dark:text-white">Over 13 Years of Professional Expertise in:</h2>
 			{ExperienceData.map((item, index) => (
 				<div className="mb-5 item-section" key={index}>
 					{item.companyLink ? (
