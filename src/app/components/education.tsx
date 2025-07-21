@@ -9,7 +9,7 @@ const EducationItems = [
 		startedAt: 'September 2008',
 		finishedAt: 'May 2015',
 		imageName: 'education/ikbfu.jpg?2',
-		about: `Immanuel Kant Baltic Federal University is the largest educational, scientific, and cultural center in the westernmost region of Russia. IKBFU is one of the 10 Russian federal universities and it holds a leading position in education and science in the Northwestern Federal District. Top-1 univercity of Kaliningrad and Top-30 of Russia`
+		about: `Immanuel Kant Baltic Federal University is the largest educational, scientific, and cultural center in the westernmost region of Russia. IKBFU is one of the 10 Russian federal universities and it holds a leading position in education and science in the Northwestern Federal District. Top-1 university of Kaliningrad and Top-30 of Russia`
 	}
 ]
 

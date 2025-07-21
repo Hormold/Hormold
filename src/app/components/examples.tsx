@@ -1,7 +1,7 @@
 import { faCalendar, faLayerGroup } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import GitHubCalendar from 'react-github-calendar';
 const CodeExamplesItems = [
 	{
 		title: `Simple as possible fullstack chat application`,
@@ -27,36 +27,34 @@ const CodeExamplesItems = [
 
 const FunProjects = [
 	{
-		title: "Gmail to Telegram notifications: Built a service that sends Gmail notifications to Telegram using GPT-4 for smart notifications (works really cool!)",
-		url: "https://github.com/Hormold/gmail-tg-notifications"
+		title: "cognition-wheel: A Model Context Protocol (MCP) server that implements a 'wisdom of crowds' approach to AI reasoning by consulting multiple state-of-the-art language models in parallel and synthesizing their responses",
+		url: "https://github.com/Hormold/cognition-wheel",
+		stars: 178
 	},
 	{
-		title: "Voice to Calendar: A Telegram bot that allows you to add events to your Google Calendar by voice in any language from Telegram bot (I use it daily!)",
+		title: "gpt-sql-box: Text to SQL generator using GPT-3 (Python + Vue) and AI chart generator!",
+		url: "https://github.com/Hormold/gpt-sql-box",
+		stars: 50
+	},
+	{
+		title: "text-behind: Add text overlays to segmented objects in your images using AI. Powered by Meta's SAM2 for segmentation, running entirely in your browser",
+		url: "https://github.com/Hormold/text-behind",
+		stars: 12
+	},
+	{
+		title: "tiktok-warmup: TypeScript-driven Android automation that warms up TikTok accounts (likes, comments, views) via ADB & vLLM",
+		url: "https://github.com/Hormold/tiktok-warmup",
+		stars: 13
+	},
+	{
+		title: "voice2cal: Telegram Bot that converts voice messages to Google Calendar events using GPT-4",
 		url: "https://github.com/Hormold/voice2cal",
+		stars: 2
 	},
 	{
-		title: `React Native UI for GPT: Knew as much about React Native as a goldfish knows about astrophysics when I started`,
-		url: "https://github.com/Hormold/shitchat"
-	},
-	{
-		title: "Python Text 2 SQL Generator: Built a SQL query generator that uses GPT-3 to generate SQL queries from natural language and schema knowledge.",
-		url: "https://github.com/Hormold/gpt-sql-box"
-	},
-	{
-		title: "Mobile App Data Storage Investigation: Ran a detective gig on how one app hides its secrets in custom file format. Spoiler: It was a wild goose chase!",
-		url: "https://github.com/Hormold/callfilter-decoder"
-	},
-	{
-		title: "No-Nonsense Telegram Bot: Built a friendly telegram bot who keeps a keen eye on USCIS case status.",
-		url: "https://github.com/Hormold/ceac"
-	},
-	{
-		title: "DNS and Redis Protocol in Node.js: Went raw and wild to reimagine DNS and Redis protocols in Node.js.",
-		url: "https://github.com/Hormold/redns"
-	},
-	{
-		url: "https://github.com/Hormold/grammy-telegram-bot-google-cloud-functions-template",
-		title: "Telegram Bot Template: Built a template for Telegram bots that can be FAST deployed to Google Cloud Functions.",
+		title: "gmail-tg-notifications: Simple telegram bot to forward emails from Gmail to any chat using GPT-4 filtration",
+		url: "https://github.com/Hormold/gmail-tg-notifications",
+		stars: 1
 	}
 ]
 
@@ -115,10 +113,11 @@ export default function CodeExamples () {
 				<li key={index}>
 					<a href={item.url} target="_blank" rel="noreferrer">
 						<FontAwesomeIcon icon={faGithub} size="sm" listItem className='text-cyan-500'/> {item.title}
+						{item.stars && <span className="ml-2 text-sm text-gray-500">⭐ {item.stars}</span>}
 					</a>
 				</li>
 			))}
 			</ul>
-
+			<GitHubCalendar username="Hormold" />
 		</div>)
 }
