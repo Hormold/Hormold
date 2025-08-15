@@ -10,6 +10,4 @@
 <p align="left">
 <a href="https://x.com/hormold" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="hormold" height="30" width="40" /></a>
 <a href="https://linkedin.com/in/nikita39" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="nikita39" height="30" width="40" /></a>
-<a href="https://fb.com/hormold" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="hormold" height="30" width="40" /></a>
-<a href="https://instagram.com/hormold" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="hormold" height="30" width="40" /></a>
 </p>
