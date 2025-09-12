@@ -8,7 +8,7 @@ import About from './components/about';
 import FunMode from './components/funmode'
 import EmailForm from './components/emailform'
 import AppContext from './components/context';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 
 // Can not export on top level because of "use client"
@@ -35,12 +35,25 @@ const metadata: Metadata = {
 
 config.autoAddCss = false;
 
+// Component to handle search params with Suspense
+function SearchParamsHandler({ setShowEmailForm }: { setShowEmailForm: (show: boolean) => void }) {
+  const searchParams = useSearchParams()
+  
+  useEffect(() => {
+    const ref = searchParams.get('ref')
+    if (ref === 'dev') {
+      setShowEmailForm(true)
+    }
+  }, [searchParams, setShowEmailForm])
+  
+  return null
+}
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const searchParams = useSearchParams()
   const [funMode, setFunMode] = useState(false)
   const [darkMode, setDarkMode] = useState(true)
   const [showEmailForm, setShowEmailForm] = useState(false)
@@ -54,13 +67,6 @@ export default function RootLayout({
       setDarkMode(true)
     }
   }, []);
-
-  useEffect(() => {
-    const ref = searchParams.get('ref')
-    if (ref === 'dev') {
-      setShowEmailForm(true)
-    }
-  }, [searchParams])
 
   useEffect(() => {
     if (darkMode) {
@@ -108,6 +114,9 @@ export default function RootLayout({
           <script async src="https://analytics.umami.is/script.js" data-website-id="963cb8bf-15dd-4bda-ab10-cdcdee49e196"></script>
         </head>
         <body className="bg-gray-100 antialiased dark:bg-slate-800 overflow-x-hidden">
+          <Suspense fallback={null}>
+            <SearchParamsHandler setShowEmailForm={setShowEmailForm} />
+          </Suspense>
           {showEmailForm && (
             <EmailForm onClose={() => setShowEmailForm(false)} />
           )}
