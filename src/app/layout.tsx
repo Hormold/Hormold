@@ -14,7 +14,7 @@ import { useSearchParams } from 'next/navigation';
 // Can not export on top level because of "use client"
 const metadata: Metadata = {
   title: 'Nikita Podelenko - CV of Founding / Staff Full Stack Engineer',
-  description: 'Hire a Nikita Podelenko - founding / staff full stack TS/JS developer based in United States, California, Orange County area with 13+ years of experience. Fullstack Software Developer | 10+ years in JavaScript, TypeScript, Vue, Nuxt, Nest, DevOps | GPTask.io Founder | CA resident',
+  description: 'Hire a Nikita Podelenko - founding / staff full stack TS/JS developer based in United States, California, Orange County area with 13+ years of experience. Fullstack Software Developer | 13+ years in TypeScript, React, React Native, Next.js, NestJS, DevOps | SkipCalls Founder | CA resident',
   keywords: 'Nikita Podelenko, Founding / Staff Full Stack Developer, JavaScript, TypeScript, React, React Native, Next.js, Vue, Nuxt, Nest, DevOps, GPTask.io, California, Software Engineer, Programming, Hire, CV, Resume, Orange County, United States, USA, Remote, Relocation, Resume website example, CV website example, portfolio website',
   openGraph: {
     type: 'website',
