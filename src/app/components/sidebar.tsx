@@ -151,7 +151,7 @@ export default function Sidebar() {
 							<FontAwesomeIcon icon={faEnvelope} className="mr-2" />
 							Mail
 						</div>
-						<div className="text-right text-gray-600 dark:text-white text-sm truncate w-[170px]">
+						<div className="text-right text-gray-600 dark:text-white text-sm truncate max-w-[170px] min-w-0 flex-1">
 							<a href="mailto:n.podelenko@gmail.com" target="_blank" data-umami-event="contact" data-umami-event-social="email">
 								n.podelenko@gmail.com
 							</a>

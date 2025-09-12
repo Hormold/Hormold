@@ -6,8 +6,10 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import Sidebar from './components/sidebar';
 import About from './components/about';
 import FunMode from './components/funmode'
+import EmailForm from './components/emailform'
 import AppContext from './components/context';
 import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 
 // Can not export on top level because of "use client"
 const metadata: Metadata = {
@@ -38,9 +40,10 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
+  const searchParams = useSearchParams()
   const [funMode, setFunMode] = useState(false)
   const [darkMode, setDarkMode] = useState(true)
+  const [showEmailForm, setShowEmailForm] = useState(false)
 
   useEffect(() => {
     const prefersDark = window.matchMedia(
@@ -51,6 +54,13 @@ export default function RootLayout({
       setDarkMode(true)
     }
   }, []);
+
+  useEffect(() => {
+    const ref = searchParams.get('ref')
+    if (ref === 'dev') {
+      setShowEmailForm(true)
+    }
+  }, [searchParams])
 
   useEffect(() => {
     if (darkMode) {
@@ -97,13 +107,16 @@ export default function RootLayout({
           <meta property="og:site_name" content="Nikita Podelenko - CV of Staff TS/JS Full Stack Engineer, Founding Engineer" />
           <script async src="https://analytics.umami.is/script.js" data-website-id="963cb8bf-15dd-4bda-ab10-cdcdee49e196"></script>
         </head>
-        <body className="bg-gray-100 antialiased dark:bg-slate-800">
+        <body className="bg-gray-100 antialiased dark:bg-slate-800 overflow-x-hidden">
+          {showEmailForm && (
+            <EmailForm onClose={() => setShowEmailForm(false)} />
+          )}
           <main className="main-container relative z-40">
-            <div className="grid gap-4 lg:grid-cols-4">
-              <div className="space-y-5 lg:col-span-1 sidebar">
+            <div className="grid gap-4 lg:grid-cols-4 min-w-0">
+              <div className="space-y-5 lg:col-span-1 sidebar min-w-0">
                 <Sidebar />
               </div>
-              <div className="space-y-5 lg:col-span-3 main">
+              <div className="space-y-5 lg:col-span-3 main min-w-0">
                 <About />
                 {children}
                 {funMode?
