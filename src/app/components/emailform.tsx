@@ -101,8 +101,20 @@ export default function EmailForm({ onClose }: EmailFormProps) {
     setError('')
 
     try {
-      // TBD
-      await new Promise(resolve => setTimeout(resolve, 500))
+      const response = await fetch('/api/send-resume', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        setError(data.error || 'Failed to send resume. Please try again.')
+        return
+      }
       
       setIsSubmitted(true)
       
